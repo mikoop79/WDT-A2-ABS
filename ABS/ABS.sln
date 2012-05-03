@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication1", "MvcApplication1\MvcApplication1.csproj", "{58E66AEB-71AA-4FF0-873A-36F8F5907A67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABS", "ABS\ABS.csproj", "{58E66AEB-71AA-4FF0-873A-36F8F5907A67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
