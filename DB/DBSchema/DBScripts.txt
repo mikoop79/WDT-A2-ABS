@@ -1,0 +1,188 @@
+/****** Object:  Table [dbo].[Users]    Script Date: 05/05/2012 15:41:27 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Users]') AND type in (N'U'))
+DROP TABLE [dbo].[Users]
+GO
+
+/****** Object:  Table [dbo].[Users]    Script Date: 05/05/2012 15:41:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Users](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [nvarchar](256) NULL,
+	[FirstName] [nvarchar](100) NULL,
+	[LastName] [nvarchar](100) NULL,
+	[UserEmailAddress] [nvarchar](256) NULL,
+	[Password] [nvarchar](50) NULL,
+	[UserType] [tinyint] NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+/****** Object:  Table [dbo].[Booking]    Script Date: 05/05/2012 15:41:48 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Booking]') AND type in (N'U'))
+DROP TABLE [dbo].[Booking]
+GO
+
+/****** Object:  Table [dbo].[Booking]    Script Date: 05/05/2012 15:41:48 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Booking](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](100) NULL,
+	[StartTime] [datetime] NULL,
+	[EndTime] [datetime] NULL,
+ CONSTRAINT [PK_Booking] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+/****** Object:  Table [dbo].[WorkingDay]    Script Date: 05/05/2012 15:42:01 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[WorkingDay]') AND type in (N'U'))
+DROP TABLE [dbo].[WorkingDay]
+GO
+
+/****** Object:  Table [dbo].[WorkingDay]    Script Date: 05/05/2012 15:42:01 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[WorkingDay](
+	[ID] [int] NOT NULL,
+	[Description] [nvarchar](256) NULL,
+ CONSTRAINT [PK_WorkingDay] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_BookingObjectWorkingDay_Booking]') AND parent_object_id = OBJECT_ID(N'[dbo].[BookingObjectWorkingDay]'))
+ALTER TABLE [dbo].[BookingObjectWorkingDay] DROP CONSTRAINT [FK_BookingObjectWorkingDay_Booking]
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_BookingObjectWorkingDay_WorkingDay]') AND parent_object_id = OBJECT_ID(N'[dbo].[BookingObjectWorkingDay]'))
+ALTER TABLE [dbo].[BookingObjectWorkingDay] DROP CONSTRAINT [FK_BookingObjectWorkingDay_WorkingDay]
+GO
+
+/****** Object:  Table [dbo].[BookingObjectWorkingDay]    Script Date: 05/05/2012 15:42:12 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BookingObjectWorkingDay]') AND type in (N'U'))
+DROP TABLE [dbo].[BookingObjectWorkingDay]
+GO
+
+
+/****** Object:  Table [dbo].[BookingObjectWorkingDay]    Script Date: 05/05/2012 15:42:12 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[BookingObjectWorkingDay](
+	[BookingObjectId] [int] NOT NULL,
+	[WorkingDayId] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[BookingObjectWorkingDay]  WITH CHECK ADD  CONSTRAINT [FK_BookingObjectWorkingDay_Booking] FOREIGN KEY([BookingObjectId])
+REFERENCES [dbo].[Booking] ([ID])
+GO
+
+ALTER TABLE [dbo].[BookingObjectWorkingDay] CHECK CONSTRAINT [FK_BookingObjectWorkingDay_Booking]
+GO
+
+ALTER TABLE [dbo].[BookingObjectWorkingDay]  WITH CHECK ADD  CONSTRAINT [FK_BookingObjectWorkingDay_WorkingDay] FOREIGN KEY([WorkingDayId])
+REFERENCES [dbo].[WorkingDay] ([ID])
+GO
+
+ALTER TABLE [dbo].[BookingObjectWorkingDay] CHECK CONSTRAINT [FK_BookingObjectWorkingDay_WorkingDay]
+GO
+
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Appointment_Booking]') AND parent_object_id = OBJECT_ID(N'[dbo].[Appointment]'))
+ALTER TABLE [dbo].[Appointment] DROP CONSTRAINT [FK_Appointment_Booking]
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Appointment_Users]') AND parent_object_id = OBJECT_ID(N'[dbo].[Appointment]'))
+ALTER TABLE [dbo].[Appointment] DROP CONSTRAINT [FK_Appointment_Users]
+GO
+
+/****** Object:  Table [dbo].[Appointment]    Script Date: 05/05/2012 15:42:21 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Appointment]') AND type in (N'U'))
+DROP TABLE [dbo].[Appointment]
+GO
+
+/****** Object:  Table [dbo].[Appointment]    Script Date: 05/05/2012 15:42:21 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Appointment](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[UserID] [int] NULL,
+	[StartDate] [datetime] NULL,
+	[EndDate] [datetime] NULL,
+	[Comments] [nvarchar](max) NULL,
+	[BookingObjectId] [int] NULL,
+ CONSTRAINT [PK_Appointment] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[Appointment]  WITH CHECK ADD  CONSTRAINT [FK_Appointment_Booking] FOREIGN KEY([BookingObjectId])
+REFERENCES [dbo].[Booking] ([ID])
+GO
+
+ALTER TABLE [dbo].[Appointment] CHECK CONSTRAINT [FK_Appointment_Booking]
+GO
+
+ALTER TABLE [dbo].[Appointment]  WITH CHECK ADD  CONSTRAINT [FK_Appointment_Users] FOREIGN KEY([UserID])
+REFERENCES [dbo].[Users] ([ID])
+GO
+
+ALTER TABLE [dbo].[Appointment] CHECK CONSTRAINT [FK_Appointment_Users]
+GO
+
+INSERT INTO WorkingDay (ID,Description) VALUES (1,'Monday')
+INSERT INTO WorkingDay (ID,Description) VALUES (2,'Tuesday')
+INSERT INTO WorkingDay (ID,Description) VALUES (3,'Wednesday')
+INSERT INTO WorkingDay (ID,Description) VALUES (4,'Thursday')
+INSERT INTO WorkingDay (ID,Description) VALUES (5,'Friday')
+INSERT INTO WorkingDay (ID,Description) VALUES (6,'Saturday')
+INSERT INTO WorkingDay (ID,Description) VALUES (7,'Sunday')
+
+//UserType - 1: Staff 2: Admin
+INSERT INTO Users (UserName,FirstName,LastName,UserEmailAddress,Password,UserType)
+VALUES
+('shridhar','Shridhar','Iyer','shridhariyer12@gmail.com','shridhar',1)
+
+INSERT INTO Users (UserName,FirstName,LastName,UserEmailAddress,Password,UserType)
+VALUES
+('michael','Michael','Cooper','michaelcooper@gmail.com','michael',2)
