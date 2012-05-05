@@ -41,7 +41,8 @@ h1, .contentheading{
 
 #header .wrapper
 {
-    border-bottom: 1px solid #373837
+    border-bottom: 1px solid #373837;
+    /*background-color:#000;*/
 }
 #content .wrapper
 {
@@ -72,7 +73,7 @@ h1, .contentheading{
     line-height: 14px;
     font-size:14px;
     width:190px;
-    color:#fdf9f9;
+    color:#ffffff;
     font-weight:bold;
     border-top:1px solid #e1e1e1;
     border-bottom:2px solid #fff;
