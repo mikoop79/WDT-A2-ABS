@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ABS.Master.cs" Inherits="ABS.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.Master.cs" Inherits="ABS.Site1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-au" lang="en-au">
 <head id="Head1" runat="server">
@@ -30,7 +30,7 @@
 	                    <li><a href="Signup.aspx">Sign Up</a></li>
 	                    <li><a href="#">Check Availability</a></li>
 	                    <li><a href="#">Make an Appointment</a></li>
-	                    <li class="last"><a href="#">Management</a></li>
+	                    
                     </ul> 
                 </div>
             </div>
