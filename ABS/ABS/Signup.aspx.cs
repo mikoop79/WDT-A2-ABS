@@ -13,5 +13,13 @@ namespace ABS
         {
 
         }
+
+        protected void wizard_CreatingUser(object sender, LoginCancelEventArgs e)
+        {
+            //e.Cancel = ((CreateUserWizard)sender).UserName.Contains("!@#$%^&");
+            e.Cancel = true;
+        }
+
+
     }
 }

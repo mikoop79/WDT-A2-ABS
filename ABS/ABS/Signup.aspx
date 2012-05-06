@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
-    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server">
+    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" CreatingUser="wizard_CreatingUser">
         <WizardSteps>
             <asp:CreateUserWizardStep runat="server" />
             <asp:CompleteWizardStep runat="server" />
