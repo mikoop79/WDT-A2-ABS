@@ -16,7 +16,7 @@
     <table cellpadding="0" cellspacing="0" border="1">
         <tr>
             <td colspan="2">
-                <asp:TextBox ID="calTxtBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="calTxtBox" runat="server" OnTextChanged="calTxtBox_OnTextChanged"></asp:TextBox>
                         <img id="calID" src="/images/calendar_icon.gif" alt="Please select date" />
                         <cc1:CalendarExtender id="calTxtBox_CalendarExtender" runat="server" enabled="True" TargetControlID="calTxtBox" PopupButtonID="calID" >
                         </cc1:CalendarExtender>
