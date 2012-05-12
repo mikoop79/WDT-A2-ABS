@@ -24,8 +24,8 @@ namespace ABS.BusinessObjects
         DataSet dsExecSelect;
         String ErrorMsg;
         int ErrorNo;
-
-
+     
+ 
         private DataSet _ds;
         private DataTable dt;
         private int iRet;
@@ -56,7 +56,7 @@ namespace ABS.BusinessObjects
 
         public DataSet getAvailability(DateTime dt)
         {
-
+         
             m_DBConnection = new SqlConnection();
             strCnn = ConfigurationManager.ConnectionStrings["appConnectionString"].ConnectionString;
             m_DBConnection.ConnectionString = strCnn;
@@ -82,10 +82,10 @@ namespace ABS.BusinessObjects
             m_bIsConnected = false;
 
             return dsExecSelect;
-
+            
         }
 
-        public int InsertBooking(String Title, DateTime StartTime, DateTime EndTime)
+        public int InsertBooking(String Title,DateTime StartTime,DateTime EndTime)
         {
             m_DBConnection = new SqlConnection();
             strCnn = ConfigurationManager.ConnectionStrings["appConnectionString"].ConnectionString;
@@ -123,10 +123,10 @@ namespace ABS.BusinessObjects
             m_DBConnection = null;
             m_Command = null;
             m_bIsConnected = false;
-
+            
             return iRet;
         }
 
-
+        
     }
 }

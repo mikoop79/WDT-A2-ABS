@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.master" AutoEventWireup="true" CodeBehind="CheckAvailability.aspx.cs" Theme="user" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ABS.Master" AutoEventWireup="true" CodeBehind="CheckAvailability.aspx.cs" Inherits="ABS.CheckAvailability" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
@@ -6,7 +6,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
     <script type="text/javascript">
-        function showalert() {
+        function showalert() 
+        {
             alert("inside alert of show alert");
         }
     </script>
@@ -20,23 +21,32 @@
                         <img id="calID" src="/images/calendar_icon.gif" alt="Please select date" />
                         <cc1:CalendarExtender id="calTxtBox_CalendarExtender" runat="server" enabled="True" TargetControlID="calTxtBox" PopupButtonID="calID" >
                         </cc1:CalendarExtender>
+                        <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
                         
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
                         <asp:GridView ID="grdAvailability" runat="server" 
-                        DataSourceID="ObjectDataSource1" AutoGenerateColumns="False">
+                        DataSourceID="ObjectDataSource1" AutoGenerateColumns="False" 
+                            AllowPaging="True" AllowSorting="True">
+                            <Columns>
+                                <asp:CommandField ShowSelectButton="True" />
+                                <asp:BoundField DataField="ID" HeaderText="ID" />
+                                <asp:BoundField DataField="Title" HeaderText="Title" />
+                                <asp:BoundField DataField="StartTime" HeaderText="Start Time" />
+                                <asp:BoundField DataField="EndTime" HeaderText="End Time" />
+                            </Columns>
                         </asp:GridView>
-                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="getAvailability" 
-                        TypeName="ABS.BusinessObjects.Booking" 
-                            ondatabinding="ObjectDataSource1_DataBinding">
+                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                            SelectMethod="getAvailability" TypeName="ABS.BusinessObjects.Booking">
                             <SelectParameters>
-                                <asp:ControlParameter ControlID="calTxtBox" DefaultValue="1900-01-01" Name="dt" 
-                                    PropertyName="Text" Type="DateTime" />
+                                <asp:ControlParameter ControlID="calTxtBox" Name="dt" PropertyName="Text" 
+                                    Type="DateTime" />
                             </SelectParameters>
-                        </asp:ObjectDataSource>        
+                        </asp:ObjectDataSource>
+                        <br />
                     </ContentTemplate>
                     <Triggers>
-                        <asp:AsyncPostBackTrigger ControlID="calTxtBox" />
+                        <asp:AsyncPostBackTrigger ControlID="btnSearch" EventName="Click" />
                     </Triggers>
                 </asp:UpdatePanel>
                 

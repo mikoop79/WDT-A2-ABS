@@ -19,26 +19,24 @@ namespace ABS
             //calDate.SelectedDate = DateTime.Now.Date;
             if (!Page.IsPostBack)
             {
+                calTxtBox.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
                 PopulateGrid();
             }
-
+        
         }
 
         public void PopulateGrid()
         {
-            Booking objBooking = new Booking();
-            ObjectDataSource1.SelectMethod = "objBooking.getAvailability";
-            //Parameter p1 = new Parameter();
-            //p1.Name = "dt";
-            //p1.DefaultValue = "1900-01-01";
-            //ObjectDataSource1.SelectParameters.Add(p1);
+            //Booking objBooking = new Booking();
+            //ObjectDataSource1.SelectMethod = "objBooking.getAvailability";
             ObjectDataSource1.DataBind();
             grdAvailability.DataBind();
+            grdAvailability.Visible = true;
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            PopulateGrid();
+            //PopulateGrid();
         }
 
         protected void calTxtBox_OnTextChanged(object sender, EventArgs e)
@@ -58,20 +56,23 @@ namespace ABS
 
         protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
         {
-            List<SqlParameter> param = new List<SqlParameter>();
-            SqlParameter selDt = new SqlParameter();
-            selDt.ParameterName = "@Dt";
-            selDt.SqlDbType = SqlDbType.DateTime;
-            selDt.Size = 20;
-            selDt.Direction = ParameterDirection.Input;
-            selDt.Value = calTxtBox.Text;
-            param.Add(selDt);
+            //List<SqlParameter> param = new List<SqlParameter>();
+            //SqlParameter selDt = new SqlParameter();
+            //selDt.ParameterName = "@Dt";
+            //selDt.SqlDbType = SqlDbType.DateTime;
+            //selDt.Size = 20;
+            //selDt.Direction = ParameterDirection.Input;
+            //selDt.Value = calTxtBox.Text;
+            //param.Add(selDt);
             e.InputParameters["dt"] = calTxtBox.Text;
         }
 
         protected void ObjectDataSource1_DataBinding(object sender, EventArgs e)
         {
-
+            
+            //ObjectDataSource1.SelectParameters.Add(p1);
         }
+
+        
     }
 }
