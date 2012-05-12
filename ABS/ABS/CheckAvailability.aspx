@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="CheckAvailability.aspx.cs" Inherits="ABS.CheckAvailability" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="CheckAvailability.aspx.cs" Theme="user" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 Check Availability
 </asp:Content>
