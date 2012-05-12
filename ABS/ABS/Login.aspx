@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" Theme="user" CodeBehind="Home.aspx.cs" Inherits="ABS.WebForm1" %>
+﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" Theme="user" CodeBehind="Home.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">Login</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     

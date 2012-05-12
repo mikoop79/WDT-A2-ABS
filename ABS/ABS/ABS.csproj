@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -59,6 +63,9 @@
     <Content Include="App_Themes\user\abs-logo.png" />
     <Content Include="App_Themes\user\left-bg.jpg" />
     <Content Include="App_Themes\user\user.css" />
+    <Content Include="bin\ABS.dll" />
+    <Content Include="bin\ABS.pdb" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="CheckAvailability.aspx" />
     <Content Include="CSS\img\left-bg.jpg" />
     <Content Include="CSS\img\logo.jpg" />
@@ -96,7 +103,8 @@
     <Compile Include="Admin\ConferenceRooms.aspx.designer.cs">
       <DependentUpon>ConferenceRooms.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BusinessObject\Class1.cs" />
+    <Compile Include="BusinessObjects\Booking.cs" />
+    <Compile Include="BusinessObjects\Class1.cs" />
     <Compile Include="CheckAvailability.aspx.cs">
       <DependentUpon>CheckAvailability.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
