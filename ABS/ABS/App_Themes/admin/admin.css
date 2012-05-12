@@ -7,7 +7,7 @@ body, textarea {
 }
 body 
 {
-    background:#000;
+    background:#F00;
 }
 textarea{
 	overflow:auto;
@@ -44,6 +44,7 @@ h1, .contentheading{
     border-bottom: 1px solid #373837;
     /*background-color:#000;*/
     height:115px;
+    
     background-image:url('abs-logo.png');
     background-repeat:no-repeat;
     background-position:0 0 ;
@@ -62,7 +63,7 @@ h1, .contentheading{
 {
     width:210px;
     min-height:526px;
-    background:url("./left-bg.jpg") no-repeat center top;
+    background:url('./left-bg.jpg') no-repeat center top;
     border-top: 13px solid #fff;
 }
 #left .menu

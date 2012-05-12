@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Management.aspx.cs" Inherits="ABS.Management" Theme="admin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.master" AutoEventWireup="true" CodeBehind="Management.aspx.cs" Inherits="ABS.Management" Theme="admin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-Title
+Management
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-Content
+Edit Conference Rooms
+Manage Bookings
 </asp:Content>
