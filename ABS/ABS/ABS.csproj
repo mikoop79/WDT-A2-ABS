@@ -70,6 +70,7 @@
     <Content Include="CSS\img\left-bg.jpg" />
     <Content Include="CSS\img\logo.jpg" />
     <Content Include="CSS\Site.css" />
+    <Content Include="Errors\ErrorPage.aspx" />
     <Content Include="JS\jquery-1.5.1.min.js" />
     <Content Include="JS\Site.js" />
     <Content Include="Logout.aspx" />
@@ -114,6 +115,13 @@
     </Compile>
     <Compile Include="CheckAvailability.aspx.designer.cs">
       <DependentUpon>CheckAvailability.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>

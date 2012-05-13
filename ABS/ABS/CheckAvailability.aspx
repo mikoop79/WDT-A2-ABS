@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="CheckAvailability.aspx.cs" Inherits="ABS.CheckAvailability"%>
+﻿<%@ Page Title="Check Availability" MasterPageFile="~/User.Master" Language="C#" AutoEventWireup="true" CodeBehind="CheckAvailability.aspx.cs" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <%--<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">

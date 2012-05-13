@@ -34,13 +34,11 @@
             <div id="left">
                 <div class="module">
                    <ul class="nav nav-tabs nav-stacked">
-                   <b:a ID="Navcontrol1" runat="server" />
-                   <asp:ContentPlaceHolder ID="LogggedInStatus" runat="server" />
-                   <asp:Label ID="Labelid" runat="server" />
-	                   
-                    </ul> 
-                    
-                    </div>
+                    <b:a ID="Navcontrol1" runat="server" />
+                    <asp:ContentPlaceHolder ID="LogggedInStatus" runat="server" />
+                    <asp:Label ID="Labelid" runat="server" />
+	               </ul> 
+                </div>
             </div>
             <div id="main">
                 <h1 class="contentheading"><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></h1>

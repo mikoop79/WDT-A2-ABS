@@ -19,3 +19,8 @@ Default skin template. The following skins are provided as examples only.
   ForeColor="White" 
   Font-Name="Arial" 
   Font-Size="9px" />
+
+  <asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
