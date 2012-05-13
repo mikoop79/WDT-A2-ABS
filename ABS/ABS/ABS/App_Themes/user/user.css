@@ -1,0 +1,105 @@
+﻿* {
+	margin:0;
+	padding:0;
+}
+body, textarea {
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+}
+body 
+{
+    background:#000;
+}
+textarea{
+	overflow:auto;
+}
+img {
+	border:0 none;
+}
+a{
+	color:#002e52;
+	text-decoration:none;	
+	position: relative;
+}
+a:hover{
+	text-decoration:underline;
+}
+h1, .contentheading{
+	font-size:30px;
+	font-weight:normal;
+	color:#8f8989;
+}
+.contentheading{
+	margin-bottom:20px;
+}
+.wrapper {
+	width: 960px;
+	margin:0 auto;
+}
+.separator, .clear{
+	clear:both;
+}
+
+#header .wrapper
+{
+    border-bottom: 1px solid #373837;
+    /*background-color:#000;*/
+    height:115px;
+    background-image:url('abs-logo.png');
+    background-repeat:no-repeat;
+    background-position:0 0 ;
+    padding:0;
+    margin:0 auto;
+    width:960px;
+}
+#content .wrapper
+{
+    background:#fff;
+}
+#left, #main, #right {
+	float: left;
+}
+#left
+{
+    width:210px;
+    min-height:526px;
+    background:url("./left-bg.jpg") no-repeat center top;
+    border-top: 13px solid #fff;
+}
+#left .menu
+{
+    border-top: 1px solid #747474;
+}
+#left .menu li
+{
+    list-style:none none;
+}
+#left .menu li a
+{
+    display:block;
+    padding:7px 10px;
+    line-height: 14px;
+    font-size:14px;
+    width:190px;
+    color:#ffffff;
+    font-weight:bold;
+    border-top:1px solid #e1e1e1;
+    border-bottom:2px solid #fff;
+    text-decoration:none;
+}
+#left .menu li a:hover
+{
+    text-decoration:none;
+    background:#a5a5a5;
+}
+#left .menu li.first a
+{
+    border-top:0 none;
+}
+
+#main
+{
+    width:715px;
+    padding:35px 0 0 35px;
+    color:#8f8989;
+}
+.loginView{ color:White; float:right; width:auto; text-align:right; line-height:25px; padding:15px 5px;}

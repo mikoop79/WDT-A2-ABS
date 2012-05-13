@@ -1,20 +1,9 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="CheckAvailability.aspx.cs" Inherits="ABS.CheckAvailability"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.master" AutoEventWireup="true" CodeBehind="CheckAvailability.aspx.cs" Inherits="ABS.CheckAvailability" Theme="admin"%>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
-<%--<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">--%>
-<head id="Head1" runat="server">
-    <title></title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="robots" content="index, follow" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="~/CSS/bootstrap.css" type="text/css" />
-    
-    <script src="~/JS/jquery-1.5.1.min.js" type="text/javascript"></script>
-    <script src="~/JS/Site.js" type="text/javascript"></script>
-</head>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <body>
     <form id="form1" runat="server">
     
@@ -68,4 +57,4 @@
     </table>
     </form>
     </body>
-<%--</asp:Content>--%>
+</asp:Content>

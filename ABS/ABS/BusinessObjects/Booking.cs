@@ -58,7 +58,7 @@ namespace ABS.BusinessObjects
         {
          
             m_DBConnection = new SqlConnection();
-            strCnn = ConfigurationManager.ConnectionStrings["appConnectionString"].ConnectionString;
+            strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
             m_DBConnection.ConnectionString = strCnn;
             m_DBConnection.Open();
 
