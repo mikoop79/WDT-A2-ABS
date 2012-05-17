@@ -9,7 +9,7 @@
 
 
 
-public partial class  {
+public partial class Home{
     
     /// <summary>
     /// form1 control.

@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="BusinessObjects\Booking.cs" />
     <Compile Include="BusinessObjects\Class1.cs" />
+    <Compile Include="BusinessObjects\DBUtil.cs" />
     <Compile Include="CheckAvailability.aspx.cs">
       <DependentUpon>CheckAvailability.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

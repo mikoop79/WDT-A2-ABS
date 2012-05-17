@@ -9,7 +9,7 @@
 
 
 
-public partial class  {
+public partial class statusControl {
     
     /// <summary>
     /// form1 control.

@@ -9,7 +9,7 @@
 
 
 
-public partial class  {
+public partial class Admin {
     
     /// <summary>
     /// Head1 control.

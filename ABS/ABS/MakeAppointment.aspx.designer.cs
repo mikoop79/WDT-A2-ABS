@@ -9,7 +9,7 @@
 
 
 
-public partial class  {
+public partial class MakeAppointment{
     
     /// <summary>
     /// statusControl control.
