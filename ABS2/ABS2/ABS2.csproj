@@ -55,7 +55,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminFolder\AdminLogin.aspx" />
     <Content Include="AdminFolder\Management.aspx" />
+    <Content Include="App_Data\ASPNETDB.MDF" />
+    <Content Include="App_Data\aspnetdb_log.ldf">
+      <DependentUpon>ASPNETDB.MDF</DependentUpon>
+    </Content>
     <Content Include="App_Themes\Admin\Admin.css" />
     <Content Include="App_Themes\Admin\images\abs-logo-admin.png" />
     <Content Include="App_Themes\User\User.css" />
@@ -86,6 +91,13 @@
     <Compile Include="AdminFolder\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="AdminFolder\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminFolder\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminFolder\Management.aspx.cs">
       <DependentUpon>Management.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -94,11 +106,6 @@
       <DependentUpon>Management.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\Booking.cs" />
-<<<<<<< HEAD:ABS/ABS/ABS.csproj
-    <Compile Include="BusinessObjects\Class1.cs" />
-    <Compile Include="BusinessObjects\DBUtil.cs" />
-=======
->>>>>>> 9b4bd4f5814a71f140ad6c4d6bbe163dc9df09b6:ABS2/ABS2/ABS2.csproj
     <Compile Include="CheckAvailability.aspx.cs">
       <DependentUpon>CheckAvailability.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -176,7 +183,19 @@
   <ItemGroup>
     <Content Include="App_Themes\Admin\Admin.skin" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="AdminFolder\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminFolder\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminFolder\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

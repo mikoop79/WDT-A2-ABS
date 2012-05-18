@@ -13,9 +13,9 @@ namespace ABS2.AdminFolder {
     public partial class Admin {
         
         /// <summary>
-<<<<<<< HEAD:ABS/ABS/CheckAvailability.aspx.designer.cs
+//
         /// form1 control.
-=======
+//=======
         /// Head1 control.
         /// </summary>
         /// <remarks>
@@ -26,7 +26,7 @@ namespace ABS2.AdminFolder {
         
         /// <summary>
         /// LoginView1 control.
->>>>>>> 9b4bd4f5814a71f140ad6c4d6bbe163dc9df09b6:ABS2/ABS2/AdminFolder/Admin.Master.designer.cs
+//>>>>>>> 9b4bd4f5814a71f140ad6c4d6bbe163dc9df09b6:ABS2/ABS2/AdminFolder/Admin.Master.designer.cs
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
