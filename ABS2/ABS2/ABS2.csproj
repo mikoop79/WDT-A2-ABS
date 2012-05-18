@@ -94,11 +94,6 @@
       <DependentUpon>Management.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\Booking.cs" />
-<<<<<<< HEAD:ABS/ABS/ABS.csproj
-    <Compile Include="BusinessObjects\Class1.cs" />
-    <Compile Include="BusinessObjects\DBUtil.cs" />
-=======
->>>>>>> 9b4bd4f5814a71f140ad6c4d6bbe163dc9df09b6:ABS2/ABS2/ABS2.csproj
     <Compile Include="CheckAvailability.aspx.cs">
       <DependentUpon>CheckAvailability.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
