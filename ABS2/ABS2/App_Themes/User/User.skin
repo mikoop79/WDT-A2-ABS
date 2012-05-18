@@ -16,7 +16,7 @@ Default skin template. The following skins are provided as examples only.
 
 <asp:Label skinID="User2" runat="server" BackColor="Silver" BorderColor="#FF66FF" 
         BorderStyle="None" ForeColor="#6600FF" Text="Label"></asp:Label>
-    <asp:TextBox runat="server" BackColor="#999999" 
-        BorderColor="White" BorderStyle="None" ForeColor="#003300"></asp:TextBox>
-    <asp:HyperLink runat="server" BorderStyle="None" 
-        Font-Bold="True" Font-Underline="True" ForeColor="#000">HyperLink</asp:HyperLink>
+<asp:TextBox runat="server" BackColor="White" 
+    BorderColor="#CCCCCC" BorderStyle="solid" ForeColor="#003300"></asp:TextBox>
+<asp:HyperLink runat="server" BorderStyle="None" 
+    Font-Bold="True" Font-Underline="True" ForeColor="#000">HyperLink</asp:HyperLink>

@@ -31,6 +31,12 @@ h1, .contentheading{
 .contentheading{
 	margin-bottom:20px;
 }
+h2{
+	font-size:20px;
+	font-weight:normal;
+	color:#8f8989;
+	margin-bottom:15px;
+}
 .wrapper {
 	width: 960px;
 	margin:0 auto;
@@ -98,8 +104,27 @@ h1, .contentheading{
 
 #main
 {
-    width:715px;
-    padding:35px 0 0 35px;
+    width:680px;
+    padding:35px 35px 0 35px;
     color:#8f8989;
 }
 .loginView{ color:White; float:right; width:auto; text-align:right; line-height:25px; padding:15px 5px;}
+
+#MainContent_MakeAppointmentWizard_SideBarContainer_SideBarList
+{
+    width: 220px;
+}
+#MainContent_MakeAppointmentWizard td
+{
+    vertical-align: top;
+}
+#MainContent_MakeAppointmentWizard label
+{
+    min-width:80px;
+    float:left;
+}
+#MainContent_MakeAppointmentWizard input[type="submit"]
+{
+    margin-top: 10px;
+    margin-left: 10px;
+}
