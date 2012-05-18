@@ -12,5 +12,9 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
+<form runat="server">
+<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+</form>
+    
     Content
 </asp:Content>

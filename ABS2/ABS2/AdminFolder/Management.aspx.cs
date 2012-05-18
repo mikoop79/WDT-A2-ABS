@@ -14,19 +14,27 @@ namespace ABS2.AdminFolder
         {
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                //LoginStatus2.Text = "<li><a href='Logout.aspx' LogoutPageUrl='~/Logout.aspx' runat='server' >Logout</a></li>";
-                //if (HttpContext.Current.User.Identity.GetType) {
-                Object role = User.Identity.AuthenticationType;
-                Console.Write(role.ToString());
-               // }
-                
+
+                if (User.IsInRole("Admin"))
+                {
+                    
+                    TextBox1.Text = "User is admin";
+                   
+
+                }
+                else
+                {
+                    
+                    TextBox1.Text = "User is not admin";
+                }
+            
             }
-            else
-            {
-                //LoginStatus2.Text = "<li><a href='Login.aspx'>Login</a></li>";    
-                Object role = User.Identity.AuthenticationType;
-                Console.Write(role.ToString());
-            }
+
+            else { }
+
+
+
+            
 
         }
     }
