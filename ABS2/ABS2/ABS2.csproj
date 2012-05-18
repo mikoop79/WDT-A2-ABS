@@ -105,7 +105,11 @@
     <Compile Include="AdminFolder\Management.aspx.designer.cs">
       <DependentUpon>Management.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="BusinessObjects\Booking.cs" />
+=======
+    <Compile Include="BusinessObjects\Booking.cs" />
+>>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
     <Compile Include="CheckAvailability.aspx.cs">
       <DependentUpon>CheckAvailability.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

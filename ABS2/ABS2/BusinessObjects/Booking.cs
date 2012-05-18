@@ -30,12 +30,35 @@ namespace ABS.BusinessObjects
         private DataTable dt;
         private int iRet;
 
-        public DataSet getConferenceRooms()
+        public DataSet GetConferenceRooms()
         {
             //DBUtil objDBUtil = new DBUtil();
            // objDBUtil.Name = "usp_get_conference_rooms";
             //_ds = objDBUtil.ExecSelect();
-            return _ds;
+            //return _ds;
+            m_DBConnection = new SqlConnection();
+            strCnn = ConfigurationManager.ConnectionStrings["Dconnectionstring"].ConnectionString;
+            m_DBConnection.ConnectionString = strCnn;
+            m_DBConnection.Open();
+
+            m_CommandText = "usp_get_conference_rooms";
+            m_Command = new SqlCommand(m_CommandText, m_DBConnection);
+            m_Command.CommandTimeout = m_Timeout;
+            m_Command.CommandType = CommandType.StoredProcedure;
+            dsExecSelect = new DataSet();
+            c_DataAdapter = new SqlDataAdapter(m_Command);
+            c_DataAdapter.Fill(dsExecSelect);
+            m_DBConnection.Close();
+            m_DBConnection = null;
+            m_Command = null;
+            m_bIsConnected = false;
+
+            return dsExecSelect;
+        }
+
+        public DataSet GetAvailableTime(String roomID, DateTime dt)
+        {
+            return null;
         }
 
         public int InsertConferenceRoom(List<SqlParameter> param)
