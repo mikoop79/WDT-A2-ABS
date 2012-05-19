@@ -77,7 +77,7 @@ namespace ABS.BusinessObjects
         //    return _ds;
         //}
 
-        public DataSet getAvailability(DateTime dt)
+        public DataSet GetAvailability(DateTime dt)
         {
          
             m_DBConnection = new SqlConnection();
