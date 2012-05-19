@@ -14,11 +14,11 @@
             <ContentTemplate>
             <style>
 .passWordStrength{ width:150px; padding:0 5px; text-align:left; margin: 0px 5px;}                
-.cssClass1{background:red; color:#ffffff; width:auto; padding:3px 5px; text-align:left; margin: 3px 5px;}
-.cssClass2{background:yellow; color:#000; width:auto; padding:3px 5px; text-align:left; margin: 3px 5px;}
-.cssClass3{background:#EDO6y; color:#ffffff; width:auto; padding:3px 3px; text-align:left; margin: 3px 5px;}
-.cssClass4{background:pink; color:#999999; width:auto; padding:3px 5px; text-align:left; margin: 3px 5px;}
-.cssClass5{background:green; color:#ffffff; width:auto; padding:3px 5px; text-align:left; margin: 3px 5px;}
+.cssClass1{background:#cc6666; color:#ffffff; width:auto; padding:3px 5px; text-align:left; margin: 3px 5px;}
+.cssClass2{background:#3399cc; color:#000; width:auto; padding:3px 5px; text-align:left; margin: 3px 5px;}
+.cssClass3{background:#ff9933; color:#ffffff; width:auto; padding:3px 3px; text-align:left; margin: 3px 5px;}
+.cssClass4{background:#ff00cc; color:#999999; width:auto; padding:3px 5px; text-align:left; margin: 3px 5px;}
+.cssClass5{background:#669966; color:#ffffff; width:auto; padding:3px 5px; text-align:left; margin: 3px 5px;}
 </style>
             <table border="0" style="font-size: 100%; font-family: Verdana">
            
