@@ -127,5 +127,5 @@
    
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="navControlPLaceHolder" runat="server">
-<b:a ID="NavControlHome" runat="server" />
+    <b:a ID="NavControlHome" runat="server" />
 </asp:Content>

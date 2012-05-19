@@ -22,33 +22,12 @@ namespace ABS2.AdminFolder {
         protected global::ABS2.Controls.AdminNavControl AdminNavControlHome;
         
         /// <summary>
-<<<<<<< HEAD
-//<<<<<<< HEAD
-        /// TextBox1 control.
-//=======
-        /// form1 control.
-//>>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
-=======
-//<<<<<<< HEAD
-        /// TextBox1 control.
-//=======
-        /// form1 control.
-//>>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
->>>>>>> 8ceea42e9a3e861a49e2645741bce1d32036c870
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-<<<<<<< HEAD
-//<<<<<<< HEAD
+
+
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
-//=======
-=======
-//<<<<<<< HEAD
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-//=======
->>>>>>> 8ceea42e9a3e861a49e2645741bce1d32036c870
+
+ 
+
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
@@ -113,10 +92,6 @@ namespace ABS2.AdminFolder {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-<<<<<<< HEAD
-//>>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
-=======
-//>>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
->>>>>>> 8ceea42e9a3e861a49e2645741bce1d32036c870
+
     }
 }
