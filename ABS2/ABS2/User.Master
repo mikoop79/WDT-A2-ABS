@@ -19,6 +19,7 @@
             <AnonymousTemplate>
                 You are not logged in. <a href="Login.aspx">Login</a>
             </AnonymousTemplate>
+            
             <LoggedInTemplate>Welcome, <asp:LoginName ID="LoginName1" runat="server" /> 
                 
             </LoggedInTemplate>

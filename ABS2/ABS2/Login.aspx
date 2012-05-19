@@ -4,10 +4,39 @@
     Login
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <form runat="server">
-    <asp:Login ID="Login1" SkinID="User" runat="server" DestinationPageUrl="~/Home.aspx">
+
+<form id="Form1" runat="server">
+<asp:LoginView ID="LoginView1" runat="server" >
+
+            <AnonymousTemplate>
+                 <asp:Login ID="Login1" SkinID="User" runat="server" DestinationPageUrl="~/Home.aspx">
     </asp:Login>
     <br />
+            </AnonymousTemplate>
+            
+            <%--<LoggedInTemplate>--%>
+            <RoleGroups>
+            <asp:RoleGroup Roles ="Staff">
+                <ContentTemplate>
+                
+                <p>Staff</p>
+                </ContentTemplate>
+            </asp:RoleGroup>
+            <asp:RoleGroup Roles="Admin" >
+                <ContentTemplate>
+                <p>Admin</p>
+                </ContentTemplate>
+            
+            </asp:RoleGroup>
+            
+            </RoleGroups> 
+            
+          <%--  Welcome, <asp:LoginName ID="LoginName1" runat="server" /> 
+                
+            </LoggedInTemplate>--%>
+        </asp:LoginView>
+    
+   
     
 </form>
 <br />
