@@ -68,7 +68,6 @@ h2{
 {
     width:210px;
     min-height:400px;
-    background:url("~/Global/left-bg.jpg") no-repeat center top;
     border-top: 13px solid #fff;
     padding-left: 15px;
 }
@@ -134,7 +133,7 @@ h2{
     float: right;
     width: auto;
     text-align: right;
-    line-height: 25px;
+    margin-top: 70px;
     padding: 15px 5px; 
     margin-right:15px;   
 }
