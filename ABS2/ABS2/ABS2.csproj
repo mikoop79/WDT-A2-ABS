@@ -64,6 +64,7 @@
     <Content Include="App_Themes\Admin\Admin.css" />
     <Content Include="App_Themes\Admin\images\abs-logo-admin.png" />
     <Content Include="App_Themes\User\User.css" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="CheckAvailability.aspx" />
     <Content Include="Controls\AdminNavControl.ascx" />
     <Content Include="Controls\NavControl.ascx" />
