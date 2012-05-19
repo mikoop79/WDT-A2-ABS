@@ -8,9 +8,9 @@ using System.Web.Security;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace ABS2
+namespace ABS2.AdminFolder
 {
-    public partial class Management : System.Web.UI.Page
+    public partial class Appointments : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

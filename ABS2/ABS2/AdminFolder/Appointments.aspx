@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Manage Appointments" Language="C#" MasterPageFile="AdminFolder/Admin.Master"
+﻿<%@ Page Title="Manage Appointments" Language="C#" MasterPageFile="./Admin.Master"
     AutoEventWireup="true" CodeBehind="Appointments.aspx.cs" StylesheetTheme="Admin"
-    Inherits="ABS2.Management" Theme="Admin" %>
+    Inherits="ABS2.AdminFolder.Appointments" Theme="Admin" %>
 <%@ Register Src="~/Controls/AdminNavControl.ascx" TagName="a" TagPrefix="b" %>
 <%@ Register Src="~/Controls/AdminInternalNavControl.ascx" TagName="c" TagPrefix="d" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>

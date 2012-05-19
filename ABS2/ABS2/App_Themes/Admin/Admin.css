@@ -31,6 +31,10 @@ h1, .contentheading{
 .contentheading{
 	margin-bottom:20px;
 }
+h2
+{
+    font-weight: normal;
+}
 .wrapper {
 	width: 960px;
 	margin:0 auto;
@@ -152,4 +156,25 @@ h1, .contentheading{
 {
     float:left;
     margin-right:10px;
+}
+
+.GridView
+{
+    width:100%;
+    border-color:#8F8989;
+    margin-bottom:20px;
+}
+.GridView td
+{
+    padding: 3px 15px;
+}
+.ConferenceRoomEditor span
+{
+    min-width: 200px;
+    display: block;
+    float: left;
+}
+#MainContent_Available
+{
+    width:200px;
 }

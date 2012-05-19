@@ -5,12 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ABS2
+namespace ABS2.AdminFolder
 {
-    public partial class ConferenceRooms : System.Web.UI.Page
+    public partial class AdminArea : System.Web.UI.Page
     {
-        public Boolean IsEditing = false;
-
         protected void Page_Load(object sender, EventArgs e)
         {
 

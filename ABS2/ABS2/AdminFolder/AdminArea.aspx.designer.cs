@@ -10,33 +10,24 @@
 namespace ABS2.AdminFolder {
     
     
-    public partial class AdminLogin {
+    public partial class AdminArea {
         
         /// <summary>
-        /// NavControlHome control.
+        /// AdminNavControlHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ABS2.Controls.NavControl NavControlHome;
+        protected global::ABS2.Controls.AdminNavControl AdminNavControlHome;
         
         /// <summary>
-        /// Form2 control.
+        /// AdminInternalNavControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form2;
-        
-        /// <summary>
-        /// LoginView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView LoginView1;
+        protected global::ABS2.Controls.AdminInternalNavControl AdminInternalNavControl;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
-using ABS.BusinessObjects;
+using ABS2.BusinessObjects;
 
 namespace ABS2.BusinessObjects
 {

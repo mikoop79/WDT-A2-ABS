@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace ABS.BusinessObjects
+namespace ABS2.BusinessObjects
 {
     public class Booking
     {

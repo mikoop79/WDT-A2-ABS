@@ -26,7 +26,7 @@
                         </asp:DropDownList>
                         <asp:ObjectDataSource ID="Rooms" runat="server" 
                             SelectMethod="GetConferenceRooms" 
-                            TypeName="ABS.BusinessObjects.Booking"></asp:ObjectDataSource>
+                            TypeName="ABS2.BusinessObjects.Booking"></asp:ObjectDataSource>
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Select Date">
                     <h2>Select Date</h2>
@@ -53,7 +53,7 @@
                     </asp:ListBox>
                     <asp:ObjectDataSource ID="AvaibleTime" runat="server" 
                         SelectMethod="GetAvailableTime" 
-                        TypeName="ABS.BusinessObjects.Booking">
+                        TypeName="ABS2.BusinessObjects.Booking">
                         <SelectParameters>
                             <asp:FormParameter FormField="RoomID" Name="roomID" Type="String" 
                                 DefaultValue="Date" />

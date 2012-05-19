@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminFolder\AdminLogin.aspx" />
-    <Content Include="AdminFolder\Management.aspx" />
+    <Content Include="AdminFolder\AdminArea.aspx" />
     <Content Include="App_Data\ASPNETDB.MDF" />
     <Content Include="App_Data\aspnetdb_log.ldf">
       <DependentUpon>ASPNETDB.MDF</DependentUpon>
@@ -75,7 +75,7 @@
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
-    <Content Include="Appointments.aspx" />
+    <Content Include="AdminFolder\Appointments.aspx" />
     <Content Include="MakeAppointment.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Web.config">
@@ -87,7 +87,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="ConferenceRooms.aspx" />
+    <Content Include="AdminFolder\ConferenceRooms.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminFolder\Admin.Master.cs">
@@ -104,12 +104,12 @@
     <Compile Include="AdminFolder\AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminFolder\Management.aspx.cs">
-      <DependentUpon>Management.aspx</DependentUpon>
+    <Compile Include="AdminFolder\AdminArea.aspx.cs">
+      <DependentUpon>AdminArea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminFolder\Management.aspx.designer.cs">
-      <DependentUpon>Management.aspx</DependentUpon>
+    <Compile Include="AdminFolder\AdminArea.aspx.designer.cs">
+      <DependentUpon>AdminArea.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\Booking.cs" />
     <Compile Include="BusinessObjects\Management.cs" />
@@ -162,15 +162,16 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Appointments.aspx.cs">
+    <Compile Include="AdminFolder\Appointments.aspx.cs">
       <DependentUpon>Appointments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Appointments.aspx.designer.cs">
+    <Compile Include="AdminFolder\Appointments.aspx.designer.cs">
       <DependentUpon>Appointments.aspx</DependentUpon>
     </Compile>
     <Compile Include="MakeAppointment.aspx.cs">
       <DependentUpon>MakeAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MakeAppointment.aspx.designer.cs">
       <DependentUpon>MakeAppointment.aspx</DependentUpon>
@@ -190,11 +191,11 @@
     <Compile Include="User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>
     </Compile>
-    <Compile Include="ConferenceRooms.aspx.cs">
+    <Compile Include="AdminFolder\ConferenceRooms.aspx.cs">
       <DependentUpon>ConferenceRooms.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConferenceRooms.aspx.designer.cs">
+    <Compile Include="AdminFolder\ConferenceRooms.aspx.designer.cs">
       <DependentUpon>ConferenceRooms.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminFolder/Admin.Master" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Theme="Admin" StylesheetTheme="Admin" Inherits="ABS2.AdminFolder.AdminLogin" %>
-<%@ Register Src="~/Controls/AdminNavControl.ascx" TagName="a" TagPrefix="b" %>
+﻿<%@ Page Title="Admin Login" Language="C#" MasterPageFile="~/AdminFolder/Admin.Master" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Theme="Admin" StylesheetTheme="Admin" Inherits="ABS2.AdminFolder.AdminLogin" %>
+<%@ Register Src="~/Controls/NavControl.ascx" TagName="a" TagPrefix="b" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="navControlPLaceHolder" runat="server">
-<b:a ID="AdminNavControlHome" runat="server" />
+<b:a ID="NavControlHome" runat="server" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LogggedInStatus" runat="server">
 </asp:Content>
@@ -13,8 +13,8 @@
 <asp:LoginView ID="LoginView1" runat="server" >
 
             <AnonymousTemplate>
-            <h2>Login to Admin Area</h2>
-                 <asp:Login ID="Login1" SkinID="Admin" runat="server" DestinationPageUrl="~/AdminFolder/Management.aspx">
+            <h2 style="margin-left:35px;margin-bottom:20px;">Login to Admin Area</h2>
+                 <asp:Login ID="Login1" SkinID="Admin" TitleText="" runat="server" DestinationPageUrl="~/AdminFolder/Management.aspx">
     </asp:Login>
     <br />
             </AnonymousTemplate>
