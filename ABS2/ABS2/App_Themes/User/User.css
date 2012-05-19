@@ -7,7 +7,7 @@ body, textarea {
 }
 body 
 {
-    background:#000;
+    background:#CCC;
 }
 textarea{
 	overflow:auto;
@@ -48,7 +48,7 @@ h2{
 #header .wrapper
 {
     border-bottom: 1px solid #373837;
-    background-color:#cc0033;
+    background-color:#7D7D7D;
     height:115px;
     background-image:url(../../Global/images/abs-logo.png);
     background-repeat:no-repeat;
@@ -70,6 +70,7 @@ h2{
     min-height:526px;
     background:url("~/Global/left-bg.jpg") no-repeat center top;
     border-top: 13px solid #fff;
+    padding-left: 15px;
 }
 #left .menu
 {
@@ -104,11 +105,20 @@ h2{
 
 #main
 {
-    width:680px;
+    width:665px;
     padding:35px 35px 0 35px;
     color:#8f8989;
 }
-.loginView{ color:White; float:right; width:auto; text-align:right; line-height:25px; padding:15px 5px;}
+.loginView
+{
+    color: white;
+    float: right;
+    width: auto;
+    text-align: right;
+    line-height: 25px;
+    padding: 15px 5px; 
+    margin-right:15px;   
+}
 
 #MainContent_MakeAppointmentWizard_SideBarContainer_SideBarList
 {
