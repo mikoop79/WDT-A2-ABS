@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -15,12 +16,38 @@ namespace ABS2.AdminFolder
         private List<SqlParameter> param;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+
+                if (User.IsInRole("Admin"))
+                {
+                    
+                    TextBox1.Text = "User is admin";
+                   
+
+                }
+                else
+                {
+                    
+                    TextBox1.Text = "User is not admin";
+                }
+            
+            }
+
+            else { }
+
+
+
+            
+
             //calDate.SelectedDate = DateTime.Now.Date;
             if (!Page.IsPostBack)
             {
                 calTxtBox.Text = DateTime.Now.Date.AddDays(-2.00).ToString("yyyy-MM-dd");
                 PopulateGrid();
             }
+
 
         }
 

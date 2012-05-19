@@ -13,6 +13,9 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
+<form runat="server">
+<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+</form>
 <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
         
@@ -149,4 +152,5 @@
         </Triggers>
     </asp:UpdatePanel>
 </form>
+>>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
 </asp:Content>
