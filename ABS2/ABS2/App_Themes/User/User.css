@@ -68,7 +68,10 @@ h2{
 {
     width:210px;
     min-height:400px;
+<<<<<<< HEAD
     background:url("~/Global/left-bg.jpg") no-repeat center top;
+=======
+>>>>>>> a24f3bcfa2d8085071a8d5ddcdaa2b529b5b1d8e
     border-top: 13px solid #fff;
     padding-left: 15px;
 }
@@ -134,11 +137,19 @@ h2{
     float: right;
     width: auto;
     text-align: right;
-    line-height: 25px;
+    margin-top: 70px;
     padding: 15px 5px; 
     margin-right:15px;   
 }
-
+#MainContent_LoginView1_Login1 label
+{
+    margin-right:5px;
+}
+.loginView label, input[type=checkbox]
+{
+    float:left;
+    margin-right:10px;
+}
 #MainContent_MakeAppointmentWizard_SideBarContainer_SideBarList
 {
     width: 220px;
