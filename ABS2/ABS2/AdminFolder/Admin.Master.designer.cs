@@ -12,14 +12,14 @@ namespace ABS2.AdminFolder {
     
     public partial class Admin {
         
-<<<<<<< HEAD
+//<<<<<<< HEAD
         /// <summary>
 //
         /// form1 control.
 //=======
-=======
+//=======
         /// <summary>
->>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
+//>>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
         /// Head1 control.
         /// </summary>
         /// <remarks>
@@ -29,12 +29,12 @@ namespace ABS2.AdminFolder {
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
-<<<<<<< HEAD
+//<<<<<<< HEAD
         /// LoginView1 control.
 //>>>>>>> 9b4bd4f5814a71f140ad6c4d6bbe163dc9df09b6:ABS2/ABS2/AdminFolder/Admin.Master.designer.cs
-=======
+//=======
         /// LoginView1 control.
->>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
+//>>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
