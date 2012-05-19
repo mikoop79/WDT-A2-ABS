@@ -4,12 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-<<<<<<< HEAD
 using System.Web.Security;
-=======
 using System.Data.SqlClient;
 using System.Data;
->>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
 
 namespace ABS2.AdminFolder
 {
@@ -19,7 +16,7 @@ namespace ABS2.AdminFolder
         private List<SqlParameter> param;
         protected void Page_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
 
@@ -43,14 +40,14 @@ namespace ABS2.AdminFolder
 
 
             
-=======
+
             //calDate.SelectedDate = DateTime.Now.Date;
             if (!Page.IsPostBack)
             {
                 calTxtBox.Text = DateTime.Now.Date.AddDays(-2.00).ToString("yyyy-MM-dd");
                 PopulateGrid();
             }
->>>>>>> b3fda193e2b783cf538db80cb569fde9c7170d4c
+
 
         }
 
