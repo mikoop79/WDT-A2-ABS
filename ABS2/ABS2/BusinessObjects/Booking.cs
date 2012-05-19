@@ -81,8 +81,7 @@ namespace ABS.BusinessObjects
         {
          
             m_DBConnection = new SqlConnection();
-            strCnn = "Data Source=Data Source=WIN-BOP3PF3J8CC\SQLEXPRESSRMIT;Initial Catalog=BookingSystemDB;Integrated Security=True;User ID=sa;Password=cp12";
-            //strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+            strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
             m_DBConnection.ConnectionString = strCnn;
             m_DBConnection.Open();
 

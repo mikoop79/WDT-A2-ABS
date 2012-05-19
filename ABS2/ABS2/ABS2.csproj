@@ -187,7 +187,9 @@
     <Content Include="App_Themes\Admin\Admin.skin" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AdminFolder\Web.config" />
+    <Content Include="AdminFolder\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminFolder\Web.Debug.config">
