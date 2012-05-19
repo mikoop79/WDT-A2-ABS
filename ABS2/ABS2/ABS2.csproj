@@ -76,6 +76,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Appointments.aspx" />
+    <Content Include="MakeAppointment.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -167,6 +168,12 @@
     </Compile>
     <Compile Include="Appointments.aspx.designer.cs">
       <DependentUpon>Appointments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MakeAppointment.aspx.cs">
+      <DependentUpon>MakeAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MakeAppointment.aspx.designer.cs">
+      <DependentUpon>MakeAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUp.aspx.cs">
