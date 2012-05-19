@@ -10,49 +10,54 @@
     <meta name="description" content="" />
     <link rel="stylesheet" href="~/Global/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="~/App_Themes/Admin/Admin.css" type="text/css" />
-   
 </head>
 <body>
     <div id="header">
         <div class="wrapper">
-        <div class="loginView" style="">
-        <asp:LoginView ID="LoginView1" runat="server" >
-            <AnonymousTemplate>
-                You are not logged in. <a href="../Login.aspx">Login</a>
-            </AnonymousTemplate>
-            <LoggedInTemplate>Welcome, 
-                <asp:LoginName ID="LoginName1" runat="server" /> 
-                
-            </LoggedInTemplate>
-        </asp:LoginView>
+            <div class="loginView" style="">
+                <asp:LoginView ID="LoginView1" runat="server">
+                    <AnonymousTemplate>
+                        You are not logged in. <a href="../Login.aspx">Login</a>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome,
+                        <asp:LoginName ID="LoginName1" runat="server" />
+                    </LoggedInTemplate>
+                </asp:LoginView>
             </div>
-            
         </div>
     </div>
     <div id="content">
         <div class="wrapper">
             <div id="left">
                 <div class="module">
-                   <ul class="nav nav-tabs nav-stacked">
-                   <asp:ContentPlaceHolder ID="navControlPLaceHolder" runat="server" />
-                    <asp:ContentPlaceHolder ID="LogggedInStatus" runat="server" />
-                    <asp:Label ID="Labelid" runat="server" BackColor="#6666FF" BorderStyle="None" 
-                           ForeColor="White" />
-	               </ul> 
+                    <ul class="nav nav-tabs nav-stacked">
+                        <asp:ContentPlaceHolder ID="navControlPLaceHolder" runat="server" />
+                        <asp:ContentPlaceHolder ID="LogggedInStatus" runat="server" />
+                        <asp:Label ID="Labelid" runat="server" BackColor="#6666FF" BorderStyle="None" ForeColor="White" />
+                    </ul>
+                </div>
+            </div>
+            <div id="right">
+                <div class="module">
+                    <ul class="internal-nav">
+                        <asp:ContentPlaceHolder ID="internalNavControlPLaceHolder" runat="server" />
+                    </ul>
                 </div>
             </div>
             <div id="main">
-                <h1 class="contentheading"><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></h1>
+                <h1 class="contentheading">
+                    <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+                </h1>
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        
                 </asp:ContentPlaceHolder>
             </div>
-            <div class="clear"></div>
+            <div class="clear">
+            </div>
         </div>
     </div>
     <div id="footer">
         <div class="wrapper">
-
         </div>
     </div>
 </body>

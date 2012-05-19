@@ -66,6 +66,7 @@
     <Content Include="App_Themes\User\User.css" />
     <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="CheckAvailability.aspx" />
+    <Content Include="Controls\AdminInternalNavControl.ascx" />
     <Content Include="Controls\AdminNavControl.ascx" />
     <Content Include="Controls\NavControl.ascx" />
     <Content Include="Global\bootstrap.css" />
@@ -74,7 +75,7 @@
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
-    <Content Include="MakeAppointment.aspx" />
+    <Content Include="Appointments.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -85,6 +86,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="ConferenceRooms.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminFolder\Admin.Master.cs">
@@ -109,12 +111,20 @@
       <DependentUpon>Management.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\Booking.cs" />
+    <Compile Include="BusinessObjects\Management.cs" />
     <Compile Include="CheckAvailability.aspx.cs">
       <DependentUpon>CheckAvailability.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CheckAvailability.aspx.designer.cs">
       <DependentUpon>CheckAvailability.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminInternalNavControl.ascx.cs">
+      <DependentUpon>AdminInternalNavControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminInternalNavControl.ascx.designer.cs">
+      <DependentUpon>AdminInternalNavControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\AdminNavControl.ascx.cs">
       <DependentUpon>AdminNavControl.ascx</DependentUpon>
@@ -151,12 +161,12 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MakeAppointment.aspx.cs">
-      <DependentUpon>MakeAppointment.aspx</DependentUpon>
+    <Compile Include="Appointments.aspx.cs">
+      <DependentUpon>Appointments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MakeAppointment.aspx.designer.cs">
-      <DependentUpon>MakeAppointment.aspx</DependentUpon>
+    <Compile Include="Appointments.aspx.designer.cs">
+      <DependentUpon>Appointments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUp.aspx.cs">
@@ -172,6 +182,13 @@
     </Compile>
     <Compile Include="User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ConferenceRooms.aspx.cs">
+      <DependentUpon>ConferenceRooms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConferenceRooms.aspx.designer.cs">
+      <DependentUpon>ConferenceRooms.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="ABS2.User" %>
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-au" lang="en-au">
 <head id="Head1" runat="server">
@@ -14,45 +13,46 @@
 <body>
     <div id="header">
         <div class="wrapper">
-        <div class="loginView" style="">
-        <asp:LoginView ID="LoginView1" runat="server" >
-            <AnonymousTemplate>
-                You are not logged in. <a href="Login.aspx">Login</a>
-            </AnonymousTemplate>
-            
-            <LoggedInTemplate>Welcome, <asp:LoginName ID="LoginName1" runat="server" /> 
-                
-            </LoggedInTemplate>
-        </asp:LoginView>
+            <div class="loginView" style="">
+                <asp:LoginView ID="LoginView1" runat="server">
+                    <AnonymousTemplate>
+                        You are not logged in. <a href="Login.aspx">Login</a>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome,
+                        <asp:LoginName ID="LoginName1" runat="server" />
+                    </LoggedInTemplate>
+                </asp:LoginView>
             </div>
-            
         </div>
     </div>
     <div id="content">
         <div class="wrapper">
             <div id="left">
                 <div class="module">
-                   <ul class="nav nav-tabs nav-stacked">
-                   <asp:ContentPlaceHolder ID="navControlPLaceHolder" runat="server" />
-                    <asp:ContentPlaceHolder ID="LogggedInStatus" runat="server" />
-                    <asp:Label ID="Labelid" runat="server" BackColor="#6666FF" BorderStyle="None" 
-                           ForeColor="White" />
-	               </ul> 
+                    <ul class="nav nav-tabs nav-stacked">
+                        <asp:ContentPlaceHolder ID="navControlPLaceHolder" runat="server" />
+                        <asp:ContentPlaceHolder ID="LogggedInStatus" runat="server" />
+                        <asp:Label ID="Labelid" runat="server" BackColor="#6666FF" BorderStyle="None" ForeColor="White" />
+                    </ul>
                 </div>
             </div>
             <div id="main">
-                <h1 class="contentheading"><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></h1>
+                <h1 class="contentheading">
+                    <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+                </h1>
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        
                 </asp:ContentPlaceHolder>
             </div>
-            <div class="clear"></div>
+            <div class="clear">
+            </div>
         </div>
     </div>
     <div id="footer">
         <div class="wrapper">
             <hr />
-            <p>Copyright &copy; 2012 RMIT University</p>
+            <p>
+                Copyright &copy; 2012 RMIT University</p>
         </div>
     </div>
 </body>
