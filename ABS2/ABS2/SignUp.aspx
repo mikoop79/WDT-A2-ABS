@@ -3,9 +3,9 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="~/Controls/NavControl.ascx" TagName="a" TagPrefix="b" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+Sign Up for a new Account
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Sign Up for a new Account</h2>
     <form runat="server">
     <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" 
     ContinueDestinationPageUrl="~/Login.aspx" LoginCreatedUser="False">

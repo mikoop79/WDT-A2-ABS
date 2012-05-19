@@ -24,7 +24,7 @@ a:hover{
 	text-decoration:underline;
 }
 h1, .contentheading{
-	font-size:30px;
+	font-size:25px;
 	font-weight:normal;
 	color:#8f8989;
 }
@@ -32,7 +32,7 @@ h1, .contentheading{
 	margin-bottom:20px;
 }
 h2{
-	font-size:20px;
+	font-size:19px;
 	font-weight:normal;
 	color:#8f8989;
 	margin-bottom:15px;
@@ -67,7 +67,7 @@ h2{
 #left
 {
     width:210px;
-    min-height:526px;
+    min-height:400px;
     background:url("~/Global/left-bg.jpg") no-repeat center top;
     border-top: 13px solid #fff;
     padding-left: 15px;
@@ -108,6 +108,25 @@ h2{
     width:665px;
     padding:35px 35px 0 35px;
     color:#8f8989;
+}
+#footer .wrapper
+{
+    background: #ffffff;
+    border-radius: 0 0 15px 15px;
+    min-height: 50px;
+    padding: 15px 0 0 0;
+}
+#footer hr
+{
+    margin: 0 15px;
+}
+#footer p
+{
+    text-align:right;
+    margin-top:15px;
+    margin-right:15px;
+    font-size:11px;
+    color: #8F8989;
 }
 .loginView
 {

@@ -51,7 +51,8 @@
     </div>
     <div id="footer">
         <div class="wrapper">
-
+            <hr />
+            <p>Copyright &copy; 2012 RMIT University</p>
         </div>
     </div>
 </body>
