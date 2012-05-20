@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace ABS2
 {
@@ -33,6 +34,8 @@ namespace ABS2
                 SummaryDate.Text = Date.SelectedDate.ToShortDateString();
                 SummaryTime.Text = Time.SelectedItem.Text;
                 SummaryComment.Text = Comment.Text;
+
+                
             }
         }
 
@@ -55,6 +58,13 @@ namespace ABS2
             Saved.Text = Request.Form["Date"];
             Saved.Text = Request.Form["Time"];
             Saved.Text = Request.Form["Comment"];
+
+            /*
+            MembershipUser mu = Membership.GetUser();
+            string email = mu.Email;
+            string username = mu.UserName;
+             */
+
         }
     }
 }
