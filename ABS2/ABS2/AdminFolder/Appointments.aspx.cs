@@ -35,7 +35,7 @@ namespace ABS2.AdminFolder
             Appointment ap = new Appointment();
             ap.GetAllAppointmentsForDate(Date);
 
-            btnSearch.Text = ap.GetAllAppointmentsForDate(Date).ToString();
+            //btnSearch.Text = ap.GetAllAppointmentsForDate(Date).ToString();
         }
 
         protected void calTxtBox_OnTextChanged(object sender, EventArgs e)

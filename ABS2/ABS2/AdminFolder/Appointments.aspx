@@ -26,11 +26,20 @@
         </cc1:CalendarExtender>
         <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-            <Triggers>
+        <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="btnSearch" EventName="Click" />
 
             </Triggers>
+            <ContentTemplate>
+                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                    SelectMethod="GetAllAppointmentsForDate" 
+                    TypeName="ABS2.BusinessObjects.Appointment">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="TextBox1" Name="AppointmentDate" 
+                            PropertyName="Text" Type="DateTime" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             </ContentTemplate>
             
 
