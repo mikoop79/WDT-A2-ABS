@@ -12,55 +12,9 @@ namespace ABS2
     public partial class MakeAppointment : System.Web.UI.Page
     {
 
-        protected void FRoomIDBound(object sender, System.EventArgs e)
-        {
-            if (Request.QueryString.Get("RoomID") != null)
-            {
-                FRoomID.ClearSelection();
-                FRoomID.Items.FindByValue(Request.QueryString.Get("RoomID")).Selected = true;
-                FRoomIDUpdate.Value = FRoomID.SelectedValue;
-            }
-        }
-
-        protected void FDateBound()
-        {
-            if (Request.QueryString.Get("StartDate") != null)
-            {
-                FDate.SelectedDate = Convert.ToDateTime(Request.QueryString.Get("StartDate").Replace('-', '/'));
-                TEST.Text = Request.QueryString.Get("StartDate").Replace('-', '/');
-            }
-        }
-
-        protected void FTimeBound(object sender, System.EventArgs e)
-        {
-            if (Request.QueryString.Get("Time") != null)
-            {
-                FTime.ClearSelection();
-                String time = Convert.ToInt32(Request.QueryString.Get("Time")).ToString("00") + ":00";
-                FTime.Items.FindByValue(time).Selected = true;
-            }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             FDateBound();
-            /*if (Request.QueryString.Get("RoomID") != null && MakeAppointmentWizard.ActiveStepIndex == 1)
-            {
-                FRoomID.SelectedIndex = Convert.ToInt32(Request.QueryString.Get("RoomID"))-1;
-                AvaibleTime.SelectParameters[0].DefaultValue = Request.QueryString.Get("RoomID");
-                MakeAppointmentWizard.ActiveStepIndex = 1;
-            }
-            if (Request.QueryString.Get("StartDate") != null && MakeAppointmentWizard.ActiveStepIndex <2)
-            {
-                MakeAppointmentWizard.ActiveStepIndex = 2;
-                FDate.SelectedDate = Convert.ToDateTime(Request.QueryString.Get("StartDate").Replace('-', '/'));
-            }
-            if (Request.QueryString.Get("Time") != null && MakeAppointmentWizard.ActiveStepIndex <3)
-            {
-                MakeAppointmentWizard.ActiveStepIndex = 4;
-                FTime.SelectedValue = Convert.ToInt32(Request.QueryString.Get("Time")).ToString("00") + ":00";
-            }*/
-
             FRoomIDUpdate.Value = FRoomID.SelectedValue; //for Time Object source
 
             if (MakeAppointmentWizard.ActiveStepIndex == 4)
@@ -76,6 +30,34 @@ namespace ABS2
             }
         }
 
+        protected void FRoomIDBound(object sender, System.EventArgs e)
+        {
+            if (Request.QueryString.Get("RoomID") != null)
+            {
+                FRoomID.ClearSelection();
+                FRoomID.Items.FindByValue(Request.QueryString.Get("RoomID")).Selected = true;
+                FRoomIDUpdate.Value = FRoomID.SelectedValue;
+            }
+        }
+
+        protected void FDateBound()
+        {
+            if (Request.QueryString.Get("StartDate") != null)
+            {
+                FDate.SelectedDate = Convert.ToDateTime(Request.QueryString.Get("StartDate").Replace('-', '/'));
+            }
+        }
+
+        protected void FTimeBound(object sender, System.EventArgs e)
+        {
+            if (Request.QueryString.Get("Time") != null)
+            {
+                FTime.ClearSelection();
+                String time = Convert.ToInt32(Request.QueryString.Get("Time")).ToString("00") + ":00";
+                FTime.Items.FindByValue(time).Selected = true;
+            }
+        }
+
         protected void Date_SelectionChanged(object sender, EventArgs e)
         {
 
@@ -83,24 +65,30 @@ namespace ABS2
 
         protected void MakeAppointmentWizard_FinishButtonClick(object sender, WizardNavigationEventArgs e)
         {
-            if (saveAppointment())
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                MakeAppointmentWizard.DisplaySideBar = false;
-                MakeAppointmentWizard.Enabled = false;
-                Feedback.Text = "Thank you! Your appointment has been made successfully.";
+                if (saveAppointment())
+                {
+                    MakeAppointmentWizard.DisplaySideBar = false;
+                    MakeAppointmentWizard.Enabled = false;
+                    Feedback.Text = "Thank you! Your appointment has been made successfully.";
+                }
+                else
+                {
+                    Feedback.Text = "Sorry, your booking is not available. Please check your date!";
+                }
             }
             else
             {
-                Feedback.Text = "Sorry, your booking is not available. Please check your date!";
+                Feedback.Text = "Sorry, please login!";
             }
-            
         }
 
         protected Boolean saveAppointment()
         {
             int RoomID = Convert.ToInt32(FRoomID.SelectedValue);
             String date = FDate.SelectedDate.ToShortDateString();
-            String time = SummaryTime.Text;
+            String time = FTime.SelectedValue;
             String comment = FComment.Text;
 
             DateTime StartDate = Convert.ToDateTime(date);
@@ -114,7 +102,6 @@ namespace ABS2
 
             int returnValue = new Appointment().InsertAppointment(username, email, StartDate, EndDate, comment, RoomID);
             return returnValue != 0;
-
         }
     }
 }

@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ABS2
-{
-
-
-    public partial class CheckAvailability
-    {
-
+namespace ABS2 {
+    
+    
+    public partial class CheckAvailability {
+        
         /// <summary>
         /// NavControlHome control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace ABS2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ABS2.Controls.NavControl NavControlHome;
-
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace ABS2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// ScriptManager1 control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace ABS2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager1;
-
+        
         /// <summary>
         /// calTxtBox control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace ABS2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox calTxtBox;
-
+        
         /// <summary>
         /// calTxtBox_CalendarExtender control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace ABS2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender calTxtBox_CalendarExtender;
-
+        
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace ABS2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-
+        
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace ABS2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-
+        
         /// <summary>
         /// grdAvailability control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace ABS2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdAvailability;
-
+        
         /// <summary>
         /// ObjectDataSource1 control.
         /// </summary>

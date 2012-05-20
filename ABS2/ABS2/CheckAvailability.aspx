@@ -11,12 +11,6 @@ Check Availability
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
 <form id="form1" runat="server">
-    
-    <script type="text/javascript">
-        function showalert() {
-            alert("inside alert of show alert");
-        }
-    </script>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
         
     </asp:ScriptManager>
@@ -33,8 +27,7 @@ Check Availability
             _2PMSlot,_3PMSlot,_4PMSlot,_5PMSlot,_6PMSlot,_7PMSlot,_8PMSlot" AutoGenerateColumns="False" 
                 AllowPaging="True" AllowSorting="True" 
                 onselectedindexchanged="grdAvailability_SelectedIndexChanged" 
-                onrowdatabound="grdAvailability_RowDataBound" 
-                onrowcommand="grdAvailability_RowCommand">
+                onrowdatabound="grdAvailability_RowDataBound">
                 <Columns>
                     <asp:BoundField DataField="BookingID" HeaderText="ID" Visible="False" />
                     <asp:BoundField DataField="Title" HeaderText="Title" />
