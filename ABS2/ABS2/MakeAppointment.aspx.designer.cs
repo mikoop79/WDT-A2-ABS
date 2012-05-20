@@ -73,7 +73,7 @@ namespace ABS2 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox Time;
+        protected global::System.Web.UI.WebControls.DropDownList Time;
         
         /// <summary>
         /// AvaibleTime control.
@@ -128,5 +128,14 @@ namespace ABS2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label SummaryComment;
+        
+        /// <summary>
+        /// Saved control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Saved;
     }
 }

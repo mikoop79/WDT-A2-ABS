@@ -43,7 +43,18 @@ namespace ABS2
 
         protected void MakeAppointmentWizard_FinishButtonClick(object sender, WizardNavigationEventArgs e)
         {
+            MakeAppointmentWizard.DisplaySideBar = false;
+            MakeAppointmentWizard.Enabled = false;
+            Saved.Text = "Thank you! Your appointment has been made successfully.";
+            saveAppointment();
+        }
 
+        protected void saveAppointment()
+        {
+            Saved.Text = Request.Form["RoomID"];
+            Saved.Text = Request.Form["Date"];
+            Saved.Text = Request.Form["Time"];
+            Saved.Text = Request.Form["Comment"];
         }
     }
 }

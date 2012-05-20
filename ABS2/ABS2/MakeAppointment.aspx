@@ -13,7 +13,7 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
-        <asp:Wizard ID="MakeAppointmentWizard" runat="server" ActiveStepIndex="1" 
+        <asp:Wizard ID="MakeAppointmentWizard" runat="server" ActiveStepIndex="3" 
             onfinishbuttonclick="MakeAppointmentWizard_FinishButtonClick">
             <WizardSteps>
                 <asp:WizardStep runat="server" title="Introduction">
@@ -49,12 +49,16 @@
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Select Time">
                     <h2>Select Time</h2>
-                    <asp:ListBox ID="Time" runat="server" DataSourceID="AvaibleTime" 
+                    <asp:DropDownList ID="Time" runat="server" DataSourceID="AvaibleTime" 
                         DataTextField="Text" DataValueField="Value">
-                    </asp:ListBox>
+                    </asp:DropDownList>
                     <asp:ObjectDataSource ID="AvaibleTime" runat="server" 
-                        SelectMethod="GetAllAvailableTime" 
-                        TypeName="ABS2.BusinessObjects.Management">
+                        SelectMethod="GetAvailableTime" 
+                        TypeName="ABS2.BusinessObjects.Booking">
+                        <SelectParameters>
+                            <asp:FormParameter DefaultValue="" FormField="RoomID" Name="BookingID" 
+                                Type="String" />
+                        </SelectParameters>
                     </asp:ObjectDataSource>
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Comments">
@@ -67,6 +71,8 @@
                     <p><label for="">Date: </label><asp:Label ID="SummaryDate" runat="server" Text="Date"></asp:Label></p>
                     <p><label for="">Time: </label><asp:Label ID="SummaryTime" runat="server" Text="Time"></asp:Label></p>
                     <p><label for="">Comment: </label><asp:Label ID="SummaryComment" runat="server" Text="Comment"></asp:Label></p>
+                    <div class="clear"></div>
+                    <p><asp:Label ID="Saved" runat="server" Text=""></asp:Label></p>
                 </asp:WizardStep>
             </WizardSteps>
         </asp:Wizard>

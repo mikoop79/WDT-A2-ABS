@@ -34,7 +34,6 @@ namespace ABS2.AdminFolder
 
         protected void saveRoom()
         {
-            Label1.Text = "TODO";
             //Request.Form["RoomTitle"]
             //Request.Form["RoomID"]
             //Request.Form["First"]
