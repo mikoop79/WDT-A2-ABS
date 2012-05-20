@@ -138,7 +138,7 @@ Check Availability
                 </Columns>
             </asp:GridView>
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-                SelectMethod="getAvailability" TypeName="ABS.BusinessObjects.Booking">
+                SelectMethod="getAvailability" TypeName="ABS2.BusinessObjects.Booking">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="calTxtBox" Name="dt" PropertyName="Text" 
                         Type="DateTime" />
