@@ -63,7 +63,7 @@ Manage Conference Rooms
                 <asp:ListItem Value="4">Wednesday</asp:ListItem>
                 <asp:ListItem Value="5">Thursday </asp:ListItem>
                 <asp:ListItem Value="6">Friday </asp:ListItem>
-                <asp:ListItem Value="7">Sunday</asp:ListItem>
+                <asp:ListItem Value="7">Saturday</asp:ListItem>
             </asp:CheckBoxList>
         </p>
         <p>
