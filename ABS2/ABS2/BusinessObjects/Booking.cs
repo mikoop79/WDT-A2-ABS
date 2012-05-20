@@ -136,7 +136,7 @@ namespace ABS2.BusinessObjects
             for (int t = start; t <= end; t++) 
             {
                 String time = t.ToString("00") + ":00";
-                dsT.Rows.Add("1900-01-01 " + time + ":00.000", time);
+                dsT.Rows.Add(time, time);
             }
             return ds;
         }

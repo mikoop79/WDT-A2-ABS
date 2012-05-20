@@ -3,15 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="navControlPLaceHolder" runat="server">
     <b:a ID="NavControlHome" runat="server" />
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="LogggedInStatus" runat="server">
 </asp:Content>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="TitleContent" runat="server">
     Make an Appointment
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Label ID="TEST" runat="server" Text=""></asp:Label>
     <form id="form1" runat="server">
         <asp:HiddenField ID="FRoomIDUpdate" runat="server" />
         <asp:Wizard ID="MakeAppointmentWizard" runat="server" ActiveStepIndex="0"
@@ -23,7 +22,7 @@
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" title="Select a Conference Room">
                     <h2>Select a Conference Room</h2>
-                    <asp:DropDownList ID="FRoomID" runat="server" AutoPostBack="true"
+                    <asp:DropDownList ID="FRoomID" runat="server" AutoPostBack="true" OnDataBound="FRoomIDBound" 
                             DataSourceID="Rooms" DataTextField="Title" DataValueField="ID">
                         </asp:DropDownList>
                         <asp:ObjectDataSource ID="Rooms" runat="server" 
@@ -32,7 +31,7 @@
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Select Date">
                     <h2>Select Date</h2>
-                    <asp:Calendar ID="FDate" runat="server" BackColor="White" 
+                    <asp:Calendar ID="FDate" runat="server" BackColor="White"
                         BorderColor="#999999" Font-Names="Verdana" Font-Size="8pt" 
                         ForeColor="Black" Height="180px" Width="200px" CellPadding="4" 
                         DayNameFormat="Shortest">
@@ -51,7 +50,7 @@
                 <asp:WizardStep runat="server" Title="Select Time">
                     <h2>Select Time</h2>
                     <asp:DropDownList ID="FTime" runat="server" DataSourceID="AvaibleTime" 
-                        DataTextField="Text" DataValueField="Value">
+                        DataTextField="Text" DataValueField="Value" OnDataBound="FTimeBound">
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="AvaibleTime" runat="server" 
                         SelectMethod="GetAvailableTimeList" 
