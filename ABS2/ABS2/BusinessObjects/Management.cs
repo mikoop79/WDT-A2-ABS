@@ -9,19 +9,18 @@ namespace ABS2.BusinessObjects
 {
     public class Management
     {
-        public DataSet GetConferenceRooms()
+        public DataSet GetAllAvailableTime()
         {
-            DataSet roomsInfo = new Booking().GetConferenceRooms();
-            DataSet rooms = new DataSet();
-            DataTable roomT = new DataTable();
-            DataColumn ID = new DataColumn("ID");
-            DataColumn Title = new DataColumn("Description");
-            DataColumn URL = new DataColumn("");
-            roomT.Columns.Add(ID);
-            roomT.Columns.Add(Title);
-            roomT.Columns.Add(URL);
-            rooms.Tables.Add(roomT);
-            return rooms;
+            DataSet ds = new DataSet();
+            DataTable dsT = ds.Tables.Add();
+            dsT.Columns.Add("Value", typeof(string));
+            dsT.Columns.Add("Text", typeof(string));
+            for (int i = 0, t = 7; t <= 20; i++, t++) //from 07:00 to 20:00
+            {
+                String time = String.Format("2%d:00", t);
+                dsT.Rows.Add(i, time, time);
+            }
+            return ds;
         }
     }
 }

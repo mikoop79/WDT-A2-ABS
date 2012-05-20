@@ -130,6 +130,15 @@ namespace ABS2.AdminFolder {
         protected global::System.Web.UI.WebControls.DropDownList Last;
         
         /// <summary>
+        /// AvailableTimeDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource AvailableTimeDataSource;
+        
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
