@@ -13,7 +13,7 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
-        <asp:Wizard ID="MakeAppointmentWizard" runat="server" ActiveStepIndex="5" 
+        <asp:Wizard ID="MakeAppointmentWizard" runat="server" ActiveStepIndex="0" 
             onfinishbuttonclick="MakeAppointmentWizard_FinishButtonClick">
             <WizardSteps>
                 <asp:WizardStep runat="server" title="Introduction">
