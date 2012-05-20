@@ -15,23 +15,7 @@ namespace ABS2.AdminFolder
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (HttpContext.Current.User.Identity.IsAuthenticated)
-            {
-                if (User.IsInRole("Admin"))
-                {
-                    
-                   // TextBox1.Text = "User is admin";
-                   
-
-                }
-                else
-                {
-                    
-                    //TextBox1.Text = "User is not admin";
-                }
             
-            }
-            else { }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -41,7 +25,11 @@ namespace ABS2.AdminFolder
 
         protected void calTxtBox_OnTextChanged(object sender, EventArgs e)
         {
-            
+
         }
+
+        
+
+        
     }
 }
