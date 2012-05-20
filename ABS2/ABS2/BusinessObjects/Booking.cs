@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace ABS2.BusinessObjects
+namespace ABS.BusinessObjects
 {
     public class Booking
     {
@@ -85,9 +85,33 @@ namespace ABS2.BusinessObjects
             return dsExecSelect;
         }
 
-        public DataSet GetAvailableTime(String roomID, DateTime dt)
+        public DataSet GetAvailableTime(String BookingID)
         {
-            return null;
+            m_DBConnection = new SqlConnection();
+            strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+            m_DBConnection.ConnectionString = strCnn;
+            m_DBConnection.Open();
+
+            m_CommandText = "usp_get_booking_availability_time";
+            m_Command = new SqlCommand(m_CommandText, m_DBConnection);
+            m_Command.CommandTimeout = m_Timeout;
+            m_Command.CommandType = CommandType.StoredProcedure;
+            dsExecSelect = new DataSet();
+            SqlParameter _ID = new SqlParameter();
+            _ID.ParameterName = "@ID";
+            _ID.SqlDbType = SqlDbType.Int;
+            _ID.Size = 10;
+            _ID.Direction = ParameterDirection.Input;
+            _ID.Value = BookingID;
+            m_Command.Parameters.Add(_ID);
+            c_DataAdapter = new SqlDataAdapter(m_Command);
+            c_DataAdapter.Fill(dsExecSelect);
+            m_DBConnection.Close();
+            m_DBConnection = null;
+            m_Command = null;
+            m_bIsConnected = false;
+
+            return dsExecSelect;
         }
 
         public int InsertConferenceRoom(List<SqlParameter> param)

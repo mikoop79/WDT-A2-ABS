@@ -13,7 +13,7 @@ namespace ABS2.Controls
         {
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                LoginStatus2.Text = "<li><a href='../Logout.aspx' LogoutPageUrl='../Logout.aspx' runat='server' >Logout</a></li>";
+                LoginStatus2.Text = "<li><a href='../Logout.aspx' runat='server' >Logout</a></li>";
             }
             else
             {

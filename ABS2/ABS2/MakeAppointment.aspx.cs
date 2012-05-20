@@ -14,13 +14,18 @@ namespace ABS2
             if (MakeAppointmentWizard.ActiveStepIndex == 4)
             {
                 SummaryRoom.Text = RoomID.SelectedItem.Text;
-                SummaryDate.Text = Date.SelectedDate.ToShortDateString(); ;
+                SummaryDate.Text = Date.SelectedDate.ToShortDateString();
                 SummaryTime.Text = Time.SelectedItem.Text;
                 SummaryComment.Text = Comment.Text;
             }
         }
 
         protected void Date_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void MakeAppointmentWizard_FinishButtonClick(object sender, WizardNavigationEventArgs e)
         {
 
         }

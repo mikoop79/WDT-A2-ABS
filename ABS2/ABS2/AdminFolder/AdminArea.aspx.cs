@@ -16,7 +16,11 @@ namespace ABS2.AdminFolder
 
                 if (User.IsInRole("Admin"))
                 {
+                    
                     //Response.Redirect("/AdminArea.aspx");
+
+
+
                 }
                 else
                 {
