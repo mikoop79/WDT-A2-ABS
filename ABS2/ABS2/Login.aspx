@@ -30,25 +30,15 @@
     <asp:LoginView ID="LoginView1" runat="server">
         <AnonymousTemplate>
 
-            <asp:Login ID="Login1" SkinID="User" TitleText="" runat="server" DestinationPageUrl="~/Home.aspx">           
+        
 
-           <%-- <LayoutTemplate>
-            <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
-            <asp:TextBox ID="UserName"  runat="server" />
-            <asp:requiredfieldvalidator id="UserNameRequired" runat="server" ControlToValidate="UserName" Text="Required"></asp:requiredfieldvalidator>
-                        
-           <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
-           <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
-           <asp:requiredfieldvalidator id="Requiredfieldvalidator1" runat="server" ControlToValidate="Password" Text="Required"></asp:requiredfieldvalidator>
-           <br />
-           <asp:Button ID="Button1" runat="server" Text="Login" />
            
-           </asp:Login>
-           <br />
-           <asp:Checkbox id="RememberMe" runat="server" Text="Remember my login"></asp:Checkbox>
-           <br />
-           <asp:Literal id="FailureText" runat="server"></asp:Literal>
-           </LayoutTemplate>--%>
+
+        
+
+            <asp:Login ID="Login1" SkinID="User" TitleText="" runat="server" DestinationPageUrl="~/MakeAppointment.aspx" CreateUserUrl="~/SignUp.aspx" UserNameRequiredErrorMessage="Username is required." PasswordRequiredErrorMessage="Password is required">           
+
+          
             </asp:login>
         </AnonymousTemplate>
         <LoggedInTemplate>
