@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ABS2.BusinessObjects;
 
 namespace ABS2.AdminFolder
 {
     public partial class ConferenceRooms : System.Web.UI.Page
     {
         public Boolean IsEditing = false;
+        Booking objBooking = new Booking();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,7 +36,17 @@ namespace ABS2.AdminFolder
 
         protected void saveRoom()
         {
-            
+            int iret = 0;
+            string strBookingDays = String.Empty;
+            int i = 0;
+            for (i=0;i < Available.Items.Count -1;i++)
+            {
+                if (Available.Items[i].Selected  == true)
+                {
+                strBookingDays += Available.Items[i].Value + ",";
+                }
+            }
+            iret = objBooking.updateBooking(Convert.ToInt32(RoomID.Value),Convert.ToDateTime(First.SelectedItem.Value), Convert.ToDateTime(Last.SelectedItem.Value), strBookingDays);
         }
 
         protected void OnGridViewRowCreated(object sender, GridViewRowEventArgs e)

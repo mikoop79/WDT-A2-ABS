@@ -57,13 +57,13 @@ Manage Conference Rooms
         <p>
             <asp:Label ID="Label4" runat="server" Text="Available on: "></asp:Label>
             <asp:CheckBoxList ID="Available" runat="server">
-                <asp:ListItem Value="1">Sunday </asp:ListItem>
-                <asp:ListItem Value="2">Monday</asp:ListItem>
-                <asp:ListItem Value="3">Tuesday </asp:ListItem>
-                <asp:ListItem Value="4">Wednesday</asp:ListItem>
-                <asp:ListItem Value="5">Thursday </asp:ListItem>
-                <asp:ListItem Value="6">Friday </asp:ListItem>
-                <asp:ListItem Value="7">Saturday</asp:ListItem>
+                <asp:ListItem Value="1">Monday</asp:ListItem>
+                <asp:ListItem Value="2">Tuesday </asp:ListItem>
+                <asp:ListItem Value="3">Wednesday</asp:ListItem>
+                <asp:ListItem Value="4">Thursday </asp:ListItem>
+                <asp:ListItem Value="5">Friday </asp:ListItem>
+                <asp:ListItem Value="6">Saturday</asp:ListItem>
+                <asp:ListItem Value="7">Sunday </asp:ListItem>
             </asp:CheckBoxList>
         </p>
         <p>
