@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manage Appointments" Language="C#" MasterPageFile="./Admin.Master"
+﻿<%@ Page Title="Manage Appointments" Language="C#" MasterPageFile="Admin.Master"
     AutoEventWireup="true" CodeBehind="Appointments.aspx.cs" StylesheetTheme="Admin"
     Inherits="ABS2.AdminFolder.Appointments" Theme="Admin" %>
 <%@ Register Src="~/Controls/AdminNavControl.ascx" TagName="a" TagPrefix="b" %>
@@ -27,10 +27,15 @@
         <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-            </ContentTemplate>
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="btnSearch" EventName="Click" />
+
             </Triggers>
+            </ContentTemplate>
+            
+
+            
+       
         </asp:UpdatePanel>
     </form>
 </asp:Content>
