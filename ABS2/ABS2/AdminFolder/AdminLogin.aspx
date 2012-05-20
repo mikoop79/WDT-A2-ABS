@@ -11,12 +11,6 @@
             Message.InnerText = s;
             Message.Attributes.Add("class", "message");
         }
-
-        
-        
-        
-
-
     }
 </script>
  
@@ -33,7 +27,7 @@
 <form id="Form2" runat="server">
 <style id="Style1" type="text/css" runat="server">
                 .hidden{display:none;}
-                .message{display:block; color:#F00; font-size:large;}
+                .message{display:block; color:#F00; font-size:12px; margin-bottom:5px;}
 </style>
 <div runat="server" ID="Message" class="hidden" ></div>
 <asp:LoginView ID="LoginView1" runat="server" >

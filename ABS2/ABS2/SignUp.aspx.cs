@@ -12,19 +12,7 @@ namespace ABS2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Username.Text = "hello";
             
         }
-
-        protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
-        {
-
-
-
-
-
-        }
-
-       
     }
 }

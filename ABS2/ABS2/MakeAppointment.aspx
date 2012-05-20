@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Make Appointment" Trace="true" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="MakeAppointment.aspx.cs" Inherits="ABS2.MakeAppointment" Theme="User" %>
+﻿<%@ Page Title="Make Appointment" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="MakeAppointment.aspx.cs" Inherits="ABS2.MakeAppointment" Theme="User" %>
 <%@ Register Src="~/Controls/NavControl.ascx" TagName="a" TagPrefix="b" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="navControlPLaceHolder" runat="server">
     <b:a ID="NavControlHome" runat="server" />

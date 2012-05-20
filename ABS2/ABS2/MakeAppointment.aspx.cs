@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using ABS2.BusinessObjects;
 
 namespace ABS2
 {
@@ -65,17 +66,22 @@ namespace ABS2
 
         protected Boolean saveAppointment()
         {
-            Feedback.Text = Request.Form["FRoomID"];
-            Feedback.Text = Request.Form["FDate"];
-            Feedback.Text = Request.Form["FTime"];
-            Feedback.Text = Request.Form["FComment"];
+            int RoomID = Convert.ToInt32(FRoomID.Text);
+            String date = FDate.SelectedDate.ToShortDateString();
+            String time = FTime.SelectedItem.Text;
+            String comment = FComment.Text;
 
-            return false;
-            /*
+            DateTime StartDate = Convert.ToDateTime(date);
+            int timeInt = Convert.ToInt32(time.Substring(0, 2));
+            StartDate = StartDate.AddHours(timeInt);
+            DateTime EndDate = StartDate.AddHours(1);
+
             MembershipUser mu = Membership.GetUser();
-            string email = mu.Email;
-            string username = mu.UserName;
-             */
+            String email = mu.Email;
+            String username = mu.UserName;
+
+            int returnValue = new Appointment().InsertAppointment(username, email, StartDate, EndDate, comment, RoomID);
+            return returnValue != 0;
 
         }
     }

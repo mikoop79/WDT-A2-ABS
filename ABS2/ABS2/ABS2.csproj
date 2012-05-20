@@ -112,6 +112,7 @@
     <Compile Include="AdminFolder\AdminArea.aspx.designer.cs">
       <DependentUpon>AdminArea.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\Appointment.cs" />
     <Compile Include="BusinessObjects\Booking.cs" />
     <Compile Include="BusinessObjects\Management.cs" />
     <Compile Include="CheckAvailability.aspx.cs">
