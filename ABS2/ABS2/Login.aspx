@@ -26,16 +26,25 @@
                 .message{display:block; color:#F00; font-size:12px; margin-bottom:5px;}
 </style>
 <div runat="server" ID="Message" class="hidden" ></div>
+
     <asp:LoginView ID="LoginView1" runat="server">
         <AnonymousTemplate>
-            <asp:Login ID="Login1" SkinID="User" TitleText="" runat="server" DestinationPageUrl="~/Home.aspx">
-            </asp:Login>
-            <br />
+
+        
+
+           
+
+        
+
+            <asp:Login ID="Login1" SkinID="User" TitleText="" runat="server" DestinationPageUrl="~/MakeAppointment.aspx" CreateUserUrl="~/SignUp.aspx" UserNameRequiredErrorMessage="Username is required." PasswordRequiredErrorMessage="Password is required">           
+
+          
+            </asp:login>
         </AnonymousTemplate>
         <LoggedInTemplate>
        
             
-               <p>Youu are already logged in. </p>
+               <p>You are already logged in. </p>
     </asp:Login>
             </LoggedInTemplate>
     </asp:LoginView>

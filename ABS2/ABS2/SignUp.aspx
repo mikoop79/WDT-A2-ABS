@@ -41,8 +41,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" 
-    ContinueDestinationPageUrl="~/Login.aspx" LoginCreatedUser="False" 
-        oncreateduser="CreateUserWizard1_CreatedUser">
+    ContinueDestinationPageUrl="~/Login.aspx" >
     <WizardSteps>
         <asp:CreateUserWizardStep runat="server" >
             <ContentTemplate>
@@ -91,8 +90,7 @@
                         TargetControlID="Password" PreferredPasswordLength="8" 
                         RequiresUpperAndLowerCaseCharacters="True" TextStrengthDescriptions="Very Poor;Weak;Average;Strong;Excellent"  TextCssClass="passWordStrength" TextStrengthDescriptionStyles="btn btn-danger;btn btn-warning;btn btn-warning;btn btn-primary;btn btn-success" >
                     </asp:PasswordStrength>
-                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
-                        ErrorMessage="Password is required." CssClass="btn btn-danger alertAjax" ToolTip="Password is required." ValidationGroup="CreateUserWizard1"></asp:RequiredFieldValidator>
+                    
                 </td>
             </tr>
             <tr>
