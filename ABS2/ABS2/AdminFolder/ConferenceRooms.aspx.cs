@@ -34,11 +34,7 @@ namespace ABS2.AdminFolder
 
         protected void saveRoom()
         {
-            //Request.Form["RoomTitle"]
-            //Request.Form["RoomID"]
-            //Request.Form["First"]
-            //Request.Form["Last"]
-            //Request.Form["Available"]
+            
         }
 
         protected void OnGridViewRowCreated(object sender, GridViewRowEventArgs e)

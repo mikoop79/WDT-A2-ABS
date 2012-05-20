@@ -26,16 +26,35 @@
                 .message{display:block; color:#F00; font-size:12px; margin-bottom:5px;}
 </style>
 <div runat="server" ID="Message" class="hidden" ></div>
+
     <asp:LoginView ID="LoginView1" runat="server">
         <AnonymousTemplate>
-            <asp:Login ID="Login1" SkinID="User" TitleText="" runat="server" DestinationPageUrl="~/Home.aspx">
-            </asp:Login>
-            <br />
+
+            <asp:Login ID="Login1" SkinID="User" TitleText="" runat="server" DestinationPageUrl="~/Home.aspx">           
+
+           <%-- <LayoutTemplate>
+            <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
+            <asp:TextBox ID="UserName"  runat="server" />
+            <asp:requiredfieldvalidator id="UserNameRequired" runat="server" ControlToValidate="UserName" Text="Required"></asp:requiredfieldvalidator>
+                        
+           <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
+           <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
+           <asp:requiredfieldvalidator id="Requiredfieldvalidator1" runat="server" ControlToValidate="Password" Text="Required"></asp:requiredfieldvalidator>
+           <br />
+           <asp:Button ID="Button1" runat="server" Text="Login" />
+           
+           </asp:Login>
+           <br />
+           <asp:Checkbox id="RememberMe" runat="server" Text="Remember my login"></asp:Checkbox>
+           <br />
+           <asp:Literal id="FailureText" runat="server"></asp:Literal>
+           </LayoutTemplate>--%>
+            </asp:login>
         </AnonymousTemplate>
         <LoggedInTemplate>
        
             
-               <p>Youu are already logged in. </p>
+               <p>You are already logged in. </p>
     </asp:Login>
             </LoggedInTemplate>
     </asp:LoginView>
