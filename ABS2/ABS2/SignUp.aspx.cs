@@ -19,6 +19,10 @@ namespace ABS2
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
         {
 
+
+
+
+
         }
 
        

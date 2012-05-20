@@ -16,7 +16,7 @@ namespace ABS2.Controls
                 LoginStatus2.Text = "<li><a href=\"Logout.aspx\" runat='server' >Logout</a></li>";
             }
             else {
-                LoginStatus2.Text = "<li><a href=\"/Login.aspx\">Login</a></li>";
+                LoginStatus2.Text = "<li><a href=\"Login.aspx\">Login</a></li>";
             }
           
             

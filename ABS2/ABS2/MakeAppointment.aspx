@@ -13,7 +13,8 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
-        <asp:Wizard ID="MakeAppointmentWizard" runat="server" ActiveStepIndex="0">
+        <asp:Wizard ID="MakeAppointmentWizard" runat="server" ActiveStepIndex="1" 
+            onfinishbuttonclick="MakeAppointmentWizard_FinishButtonClick">
             <WizardSteps>
                 <asp:WizardStep runat="server" title="Introduction">
                     <h2>Conference Room Selection</h2>
@@ -49,16 +50,11 @@
                 <asp:WizardStep runat="server" Title="Select Time">
                     <h2>Select Time</h2>
                     <asp:ListBox ID="Time" runat="server" DataSourceID="AvaibleTime" 
-                        DataTextField="Time" DataValueField="Time">
+                        DataTextField="Text" DataValueField="Value">
                     </asp:ListBox>
                     <asp:ObjectDataSource ID="AvaibleTime" runat="server" 
-                        SelectMethod="GetAvailableTime" 
-                        TypeName="ABS2.BusinessObjects.Booking">
-                        <SelectParameters>
-                            <asp:FormParameter FormField="RoomID" Name="roomID" Type="String" 
-                                DefaultValue="Date" />
-                            <asp:FormParameter FormField="dt" Name="dt" Type="DateTime" />
-                        </SelectParameters>
+                        SelectMethod="GetAllAvailableTime" 
+                        TypeName="ABS2.BusinessObjects.Management">
                     </asp:ObjectDataSource>
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Comments">
