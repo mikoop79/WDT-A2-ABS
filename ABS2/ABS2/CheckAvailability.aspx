@@ -33,8 +33,7 @@ Check Availability
             _2PMSlot,_3PMSlot,_4PMSlot,_5PMSlot,_6PMSlot,_7PMSlot,_8PMSlot" AutoGenerateColumns="False" 
                 AllowPaging="True" AllowSorting="True" 
                 onselectedindexchanged="grdAvailability_SelectedIndexChanged" 
-                onrowdatabound="grdAvailability_RowDataBound" 
-                onrowcommand="grdAvailability_RowCommand">
+                onrowdatabound="grdAvailability_RowDataBound">
                 <Columns>
                     <asp:BoundField DataField="BookingID" HeaderText="ID" Visible="False" />
                     <asp:BoundField DataField="Title" HeaderText="Title" />
@@ -139,7 +138,7 @@ Check Availability
                 </Columns>
             </asp:GridView>
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-                SelectMethod="getAvailability" TypeName="ABS2.BusinessObjects.Booking">
+                SelectMethod="getAvailability" TypeName="ABS.BusinessObjects.Booking">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="calTxtBox" Name="dt" PropertyName="Text" 
                         Type="DateTime" />

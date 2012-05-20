@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace ABS.BusinessObjects
+namespace ABS2.BusinessObjects
 {
     public class Booking
     {
@@ -116,9 +116,9 @@ namespace ABS.BusinessObjects
 
         public int InsertConferenceRoom(List<SqlParameter> param)
         {
-            DBUtil objDBUtil = new DBUtil();
-            objDBUtil.Name = "usp_ins_booking";
-            iRet = objDBUtil.ExecUpdate(param);
+            //DBUtil objDBUtil = new DBUtil();
+            //objDBUtil.Name = "usp_ins_booking";
+            //iRet = objDBUtil.ExecUpdate(param);
             return iRet;
         }
 
@@ -205,7 +205,7 @@ namespace ABS.BusinessObjects
         }
 
 
-        public int InsertBookingObjectWorkingDay(int BookingID,int[] Days)
+        public int updateBooking(int BookingID,DateTime StartTime, DateTime EndTime, string Days)
         {
             int i;
             m_DBConnection = new SqlConnection();
@@ -213,12 +213,46 @@ namespace ABS.BusinessObjects
             m_DBConnection.ConnectionString = strCnn;
             m_DBConnection.Open();
 
+            m_CommandText = "usp_updt_booking";
+            m_Command = new SqlCommand(m_CommandText, m_DBConnection);
+            m_Command.CommandTimeout = m_Timeout;
+            m_Command.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter _uBookingID = new SqlParameter();
+            _uBookingID.ParameterName = "@ID";
+            _uBookingID.SqlDbType = SqlDbType.Int;
+            _uBookingID.Size = 10;
+            _uBookingID.Direction = ParameterDirection.Input;
+            _uBookingID.Value = BookingID;
+
+            SqlParameter _StartTime = new SqlParameter();
+            _StartTime.ParameterName = "@StartTime";
+            _StartTime.SqlDbType = SqlDbType.DateTime;
+            _StartTime.Size = 20;
+            _StartTime.Direction = ParameterDirection.Input;
+            _StartTime.Value = StartTime;
+
+            SqlParameter _EndTime = new SqlParameter();
+            _EndTime.ParameterName = "@EndTime";
+            _EndTime.SqlDbType = SqlDbType.DateTime;
+            _EndTime.Size = 20;
+            _EndTime.Direction = ParameterDirection.Input;
+            _EndTime.Value = EndTime;
+
+            m_Command.Parameters.Add(_uBookingID);
+            m_Command.Parameters.Add(_StartTime);
+            m_Command.Parameters.Add(_EndTime);
+
+            iRet = m_Command.ExecuteNonQuery();
+
+            m_Command = null;
+                       
             m_CommandText = "usp_ins_BookingObjectWorkingDay";
             m_Command = new SqlCommand(m_CommandText, m_DBConnection);
             m_Command.CommandTimeout = m_Timeout;
             m_Command.CommandType = CommandType.StoredProcedure;
-                
 
+          
             for (i = 0; i < Days.Length - 1; i++)
             {
                 //dsExecSelect = new DataSet();
@@ -227,7 +261,7 @@ namespace ABS.BusinessObjects
                 _BookingID.SqlDbType = SqlDbType.Int;
                 _BookingID.Size = 10;
                 _BookingID.Direction = ParameterDirection.Input;
-                _BookingID.Value = iRet;
+                _BookingID.Value = BookingID;
             
                 SqlParameter _WorkingDayID = new SqlParameter();
                 _WorkingDayID.ParameterName = "@WorkingDayId";
