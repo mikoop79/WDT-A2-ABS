@@ -11,6 +11,22 @@ namespace ABS2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString.Get("roomid") != null)
+            {
+                RoomID.SelectedIndex = Convert.ToInt32(Request.QueryString.Get("roomid"));
+                MakeAppointmentWizard.ActiveStepIndex = 1;
+            }
+            if (Request.QueryString.Get("date") != null)
+            {
+                //TODO set select date
+                MakeAppointmentWizard.ActiveStepIndex = 2;
+            }
+            if (Request.QueryString.Get("time") != null)
+            {
+                //TODO set select time
+                MakeAppointmentWizard.ActiveStepIndex = 3;
+            }
+            
             if (MakeAppointmentWizard.ActiveStepIndex == 4)
             {
                 SummaryRoom.Text = RoomID.SelectedItem.Text;

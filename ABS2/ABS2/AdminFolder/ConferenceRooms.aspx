@@ -39,11 +39,20 @@ Manage Conference Rooms
         </p>
         <p>
             <asp:Label ID="Label2" runat="server" Text="First appointment can start at: "></asp:Label>
-            <asp:DropDownList ID="First" runat="server"></asp:DropDownList>
+            <asp:DropDownList ID="First" runat="server" 
+                DataSourceID="AvailableTimeDataSource" DataTextField="Text" 
+                DataValueField="Value">
+
+            </asp:DropDownList>
         </p>
         <p>
             <asp:Label ID="Label3" runat="server" Text="Last appointment can start at: "></asp:Label>
-            <asp:DropDownList ID="Last" runat="server"></asp:DropDownList>
+            <asp:DropDownList ID="Last" runat="server" 
+                DataSourceID="AvailableTimeDataSource" DataTextField="Text" 
+                DataValueField="Value"></asp:DropDownList>
+            <asp:ObjectDataSource ID="AvailableTimeDataSource" runat="server" 
+                SelectMethod="GetAllAvailableTime" TypeName="ABS2.BusinessObjects.Management">
+            </asp:ObjectDataSource>
         </p>
         <p>
             <asp:Label ID="Label4" runat="server" Text="Available on: "></asp:Label>

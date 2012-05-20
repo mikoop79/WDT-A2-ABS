@@ -18,11 +18,6 @@ C:\Users\Michael Cooper\Dropbox\WorkingVersionABS\ABS2\ABS2\bin\ABS2.pdb
 C:\Users\Michael Cooper\Dropbox\WorkingVersionABS\ABS2\ABS2\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Michael Cooper\Dropbox\WorkingVersionABS\ABS2\ABS2\obj\Debug\ABS2.dll
 C:\Users\Michael Cooper\Dropbox\WorkingVersionABS\ABS2\ABS2\obj\Debug\ABS2.pdb
-D:\My Documents\Visual Studio 2010\Projects\WDT-A2-ABS\ABS2\ABS2\bin\ABS2.dll
-D:\My Documents\Visual Studio 2010\Projects\WDT-A2-ABS\ABS2\ABS2\bin\ABS2.pdb
-D:\My Documents\Visual Studio 2010\Projects\WDT-A2-ABS\ABS2\ABS2\obj\Debug\ResolveAssemblyReference.cache
-D:\My Documents\Visual Studio 2010\Projects\WDT-A2-ABS\ABS2\ABS2\obj\Debug\ABS2.dll
-D:\My Documents\Visual Studio 2010\Projects\WDT-A2-ABS\ABS2\ABS2\obj\Debug\ABS2.pdb
 Z:\mikoop\Dropbox\workspace\WDT-A2-ABS\ABS2\ABS2\bin\ABS2.dll
 Z:\mikoop\Dropbox\workspace\WDT-A2-ABS\ABS2\ABS2\bin\ABS2.pdb
 Z:\mikoop\Dropbox\workspace\WDT-A2-ABS\ABS2\ABS2\obj\Debug\ResolveAssemblyReference.cache
@@ -38,3 +33,8 @@ C:\Users\Michael Cooper\Dropbox\workspace\WDT-A2-ABS\ABS2\ABS2\bin\ABS2.pdb
 C:\Users\Michael Cooper\Dropbox\workspace\WDT-A2-ABS\ABS2\ABS2\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Michael Cooper\Dropbox\workspace\WDT-A2-ABS\ABS2\ABS2\obj\Debug\ABS2.dll
 C:\Users\Michael Cooper\Dropbox\workspace\WDT-A2-ABS\ABS2\ABS2\obj\Debug\ABS2.pdb
+D:\My Documents\Visual Studio 2010\Projects\WDT-A2-ABS\ABS2\ABS2\bin\ABS2.dll
+D:\My Documents\Visual Studio 2010\Projects\WDT-A2-ABS\ABS2\ABS2\bin\ABS2.pdb
+D:\My Documents\Visual Studio 2010\Projects\WDT-A2-ABS\ABS2\ABS2\obj\Debug\ResolveAssemblyReference.cache
+D:\My Documents\Visual Studio 2010\Projects\WDT-A2-ABS\ABS2\ABS2\obj\Debug\ABS2.dll
+D:\My Documents\Visual Studio 2010\Projects\WDT-A2-ABS\ABS2\ABS2\obj\Debug\ABS2.pdb
