@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Make Appointment" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="MakeAppointment.aspx.cs" Inherits="ABS2.MakeAppointment" Theme="User" %>
+﻿<%@ Page Title="Make Appointment" Trace="true" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="MakeAppointment.aspx.cs" Inherits="ABS2.MakeAppointment" Theme="User" %>
 <%@ Register Src="~/Controls/NavControl.ascx" TagName="a" TagPrefix="b" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="navControlPLaceHolder" runat="server">
     <b:a ID="NavControlHome" runat="server" />
@@ -13,7 +13,8 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
-        <asp:Wizard ID="MakeAppointmentWizard" runat="server" ActiveStepIndex="3" 
+        <asp:HiddenField ID="FRoomIDUpdate" runat="server" />
+        <asp:Wizard ID="MakeAppointmentWizard" runat="server" ActiveStepIndex="0"
             onfinishbuttonclick="MakeAppointmentWizard_FinishButtonClick">
             <WizardSteps>
                 <asp:WizardStep runat="server" title="Introduction">
@@ -22,7 +23,7 @@
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" title="Select a Conference Room">
                     <h2>Select a Conference Room</h2>
-                    <asp:DropDownList ID="RoomID" runat="server" 
+                    <asp:DropDownList ID="FRoomID" runat="server" AutoPostBack="true"
                             DataSourceID="Rooms" DataTextField="Title" DataValueField="ID">
                         </asp:DropDownList>
                         <asp:ObjectDataSource ID="Rooms" runat="server" 
@@ -31,7 +32,7 @@
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Select Date">
                     <h2>Select Date</h2>
-                    <asp:Calendar ID="Date" runat="server" BackColor="White" 
+                    <asp:Calendar ID="FDate" runat="server" BackColor="White" 
                         BorderColor="#999999" Font-Names="Verdana" Font-Size="8pt" 
                         ForeColor="Black" Height="180px" Width="200px" CellPadding="4" 
                         DayNameFormat="Shortest">
@@ -49,21 +50,21 @@
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Select Time">
                     <h2>Select Time</h2>
-                    <asp:DropDownList ID="Time" runat="server" DataSourceID="AvaibleTime" 
+                    <asp:DropDownList ID="FTime" runat="server" DataSourceID="AvaibleTime" 
                         DataTextField="Text" DataValueField="Value">
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="AvaibleTime" runat="server" 
-                        SelectMethod="GetAvailableTime" 
+                        SelectMethod="GetAvailableTimeList" 
                         TypeName="ABS2.BusinessObjects.Booking">
                         <SelectParameters>
-                            <asp:FormParameter DefaultValue="" FormField="RoomID" Name="BookingID" 
-                                Type="String" />
+                            <asp:ControlParameter ControlID="FRoomIDUpdate" DefaultValue="" 
+                                Name="BookingID" PropertyName="Value" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Comments">
                     <h2>Comments</h2>
-                    <asp:TextBox ID="Comment" runat="server" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="FComment" runat="server" TextMode="MultiLine"></asp:TextBox>
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Review  Your Request" StepType="Finish">
                     <h2>Review  Your Request</h2>
@@ -72,7 +73,7 @@
                     <p><label for="">Time: </label><asp:Label ID="SummaryTime" runat="server" Text="Time"></asp:Label></p>
                     <p><label for="">Comment: </label><asp:Label ID="SummaryComment" runat="server" Text="Comment"></asp:Label></p>
                     <div class="clear"></div>
-                    <p><asp:Label ID="Saved" runat="server" Text=""></asp:Label></p>
+                    <p><asp:Label ID="Feedback" runat="server" Text=""></asp:Label></p>
                 </asp:WizardStep>
             </WizardSteps>
         </asp:Wizard>

@@ -114,6 +114,33 @@ namespace ABS2.BusinessObjects
             return dsExecSelect;
         }
 
+        public DataSet GetAvailableTimeList(String BookingID)
+        {
+            DataSet dsTemp = GetAvailableTime(BookingID);
+            int start = 7; //default from 07:00 to 20:00
+            int end = 20;
+            try
+            {
+                start = Convert.ToInt32(dsTemp.Tables[0].Rows[0]["StartTime"].ToString().Substring(0, 2));
+                end = Convert.ToInt32(dsTemp.Tables[0].Rows[0]["EndTime"].ToString().Substring(0, 2));
+            }
+            catch
+            {
+
+            }
+
+            DataSet ds = new DataSet();
+            DataTable dsT = ds.Tables.Add();
+            dsT.Columns.Add("Value", typeof(string));
+            dsT.Columns.Add("Text", typeof(string));
+            for (int t = start; t <= end; t++) 
+            {
+                String time = t.ToString("00") + ":00";
+                dsT.Rows.Add("1900-01-01 " + time + ":00.000", time);
+            }
+            return ds;
+        }
+
         public int InsertConferenceRoom(List<SqlParameter> param)
         {
             //DBUtil objDBUtil = new DBUtil();

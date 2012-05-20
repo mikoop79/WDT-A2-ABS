@@ -31,6 +31,15 @@ namespace ABS2 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// FRoomIDUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField FRoomIDUpdate;
+        
+        /// <summary>
         /// MakeAppointmentWizard control.
         /// </summary>
         /// <remarks>
@@ -40,13 +49,13 @@ namespace ABS2 {
         protected global::System.Web.UI.WebControls.Wizard MakeAppointmentWizard;
         
         /// <summary>
-        /// RoomID control.
+        /// FRoomID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList RoomID;
+        protected global::System.Web.UI.WebControls.DropDownList FRoomID;
         
         /// <summary>
         /// Rooms control.
@@ -58,22 +67,22 @@ namespace ABS2 {
         protected global::System.Web.UI.WebControls.ObjectDataSource Rooms;
         
         /// <summary>
-        /// Date control.
+        /// FDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Date;
+        protected global::System.Web.UI.WebControls.Calendar FDate;
         
         /// <summary>
-        /// Time control.
+        /// FTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Time;
+        protected global::System.Web.UI.WebControls.DropDownList FTime;
         
         /// <summary>
         /// AvaibleTime control.
@@ -85,13 +94,13 @@ namespace ABS2 {
         protected global::System.Web.UI.WebControls.ObjectDataSource AvaibleTime;
         
         /// <summary>
-        /// Comment control.
+        /// FComment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Comment;
+        protected global::System.Web.UI.WebControls.TextBox FComment;
         
         /// <summary>
         /// SummaryRoom control.
@@ -130,12 +139,12 @@ namespace ABS2 {
         protected global::System.Web.UI.WebControls.Label SummaryComment;
         
         /// <summary>
-        /// Saved control.
+        /// Feedback control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Saved;
+        protected global::System.Web.UI.WebControls.Label Feedback;
     }
 }
