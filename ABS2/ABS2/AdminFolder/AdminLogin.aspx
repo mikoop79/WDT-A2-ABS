@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Admin Login" Language="C#" MasterPageFile="~/AdminFolder/Admin.Master" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Theme="Admin" StylesheetTheme="Admin" Inherits="ABS2.AdminFolder.AdminLogin" %>
-<%@ Register Src="~/Controls/NavControl.ascx" TagName="a" TagPrefix="b" %>
+<%@ Register Src="~/Controls/AdminNavControl.ascx" TagName="a" TagPrefix="b" %>
 <script runat="server">
     void Page_Load(object sender, EventArgs e)
     {

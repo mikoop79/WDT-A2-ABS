@@ -13,24 +13,12 @@
             </asp:Login>
             <br />
         </AnonymousTemplate>
-        <%--<LoggedInTemplate>--%>
-        <RoleGroups>
-            <asp:RoleGroup Roles="Staff">
-                <ContentTemplate>
-                    <p>
-                        Staff</p>
-                </ContentTemplate>
-            </asp:RoleGroup>
-            <asp:RoleGroup Roles="Admin">
-                <ContentTemplate>
-                    <p>
-                        Admin</p>
-                </ContentTemplate>
-            </asp:RoleGroup>
-        </RoleGroups>
-        <%--  Welcome, <asp:LoginName ID="LoginName1" runat="server" /> 
-                
-            </LoggedInTemplate>--%>
+        <LoggedInTemplate>
+       
+            
+               <p>Youu are already logged in. </p>
+    </asp:Login>
+            </LoggedInTemplate>
     </asp:LoginView>
     </form>
     <br />

@@ -33,7 +33,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-Sign Up for a new Account
+    Sign Up for a new Account
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -41,7 +41,8 @@ Sign Up for a new Account
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" 
-    ContinueDestinationPageUrl="~/Login.aspx" LoginCreatedUser="False">
+    ContinueDestinationPageUrl="~/Login.aspx" LoginCreatedUser="False" 
+        oncreateduser="CreateUserWizard1_CreatedUser">
     <WizardSteps>
         <asp:CreateUserWizardStep runat="server" >
             <ContentTemplate>
