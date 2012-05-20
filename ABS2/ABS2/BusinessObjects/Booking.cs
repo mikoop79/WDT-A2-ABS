@@ -24,8 +24,8 @@ namespace ABS2.BusinessObjects
         DataSet dsExecSelect;
         String ErrorMsg;
         int ErrorNo;
-     
- 
+
+
         private DataSet _ds;
         private DataTable dt;
         private int iRet;
@@ -33,7 +33,7 @@ namespace ABS2.BusinessObjects
         public DataSet GetConferenceRooms()
         {
             //DBUtil objDBUtil = new DBUtil();
-           // objDBUtil.Name = "usp_get_conference_rooms";
+            // objDBUtil.Name = "usp_get_conference_rooms";
             //_ds = objDBUtil.ExecSelect();
             //return _ds;
             m_DBConnection = new SqlConnection();
@@ -46,6 +46,35 @@ namespace ABS2.BusinessObjects
             m_Command.CommandTimeout = m_Timeout;
             m_Command.CommandType = CommandType.StoredProcedure;
             dsExecSelect = new DataSet();
+            c_DataAdapter = new SqlDataAdapter(m_Command);
+            c_DataAdapter.Fill(dsExecSelect);
+            m_DBConnection.Close();
+            m_DBConnection = null;
+            m_Command = null;
+            m_bIsConnected = false;
+
+            return dsExecSelect;
+        }
+
+        public DataSet GetBookingDetailsForEdit(int BookingID)
+        {
+            m_DBConnection = new SqlConnection();
+            strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+            m_DBConnection.ConnectionString = strCnn;
+            m_DBConnection.Open();
+
+            m_CommandText = "usp_get_booking_details_for_edit";
+            m_Command = new SqlCommand(m_CommandText, m_DBConnection);
+            m_Command.CommandTimeout = m_Timeout;
+            m_Command.CommandType = CommandType.StoredProcedure;
+            dsExecSelect = new DataSet();
+            SqlParameter _BookingID = new SqlParameter();
+            _BookingID.ParameterName = "@ID";
+            _BookingID.SqlDbType = SqlDbType.Int;
+            _BookingID.Size = 10;
+            _BookingID.Direction = ParameterDirection.Input;
+            _BookingID.Value = BookingID;
+            m_Command.Parameters.Add(_BookingID);
             c_DataAdapter = new SqlDataAdapter(m_Command);
             c_DataAdapter.Fill(dsExecSelect);
             m_DBConnection.Close();
@@ -79,8 +108,9 @@ namespace ABS2.BusinessObjects
 
         public DataSet GetAvailability(DateTime dt)
         {
-         
+
             m_DBConnection = new SqlConnection();
+            //strCnn = "Data Source=Data Source=WIN-BOP3PF3J8CC\SQLEXPRESSRMIT;Initial Catalog=BookingSystemDB;Integrated Security=True;User ID=sa;Password=cp12";
             strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
             m_DBConnection.ConnectionString = strCnn;
             m_DBConnection.Open();
@@ -105,10 +135,10 @@ namespace ABS2.BusinessObjects
             m_bIsConnected = false;
 
             return dsExecSelect;
-            
+
         }
 
-        public int InsertBooking(String Title,DateTime StartTime,DateTime EndTime)
+        public int InsertBooking(String Title, DateTime StartTime, DateTime EndTime)
         {
             m_DBConnection = new SqlConnection();
             strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
@@ -119,7 +149,7 @@ namespace ABS2.BusinessObjects
             m_Command = new SqlCommand(m_CommandText, m_DBConnection);
             m_Command.CommandTimeout = m_Timeout;
             m_Command.CommandType = CommandType.StoredProcedure;
-            dsExecSelect = new DataSet();
+            //dsExecSelect = new DataSet();
             SqlParameter _title = new SqlParameter();
             _title.ParameterName = "@Title";
             _title.SqlDbType = SqlDbType.VarChar;
@@ -146,10 +176,51 @@ namespace ABS2.BusinessObjects
             m_DBConnection = null;
             m_Command = null;
             m_bIsConnected = false;
-            
+
             return iRet;
         }
 
-        
+
+        public int InsertBookingObjectWorkingDay(int BookingID, int[] Days)
+        {
+            int i;
+            m_DBConnection = new SqlConnection();
+            strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+            m_DBConnection.ConnectionString = strCnn;
+            m_DBConnection.Open();
+
+            m_CommandText = "usp_ins_BookingObjectWorkingDay";
+            m_Command = new SqlCommand(m_CommandText, m_DBConnection);
+            m_Command.CommandTimeout = m_Timeout;
+            m_Command.CommandType = CommandType.StoredProcedure;
+
+
+            for (i = 0; i < Days.Length - 1; i++)
+            {
+                //dsExecSelect = new DataSet();
+                SqlParameter _BookingID = new SqlParameter();
+                _BookingID.ParameterName = "@BookingObjectId";
+                _BookingID.SqlDbType = SqlDbType.Int;
+                _BookingID.Size = 10;
+                _BookingID.Direction = ParameterDirection.Input;
+                _BookingID.Value = iRet;
+
+                SqlParameter _WorkingDayID = new SqlParameter();
+                _WorkingDayID.ParameterName = "@WorkingDayId";
+                _WorkingDayID.SqlDbType = SqlDbType.Int;
+                _WorkingDayID.Size = 20;
+                _WorkingDayID.Direction = ParameterDirection.Input;
+                _WorkingDayID.Value = Days[i];
+
+                m_Command.Parameters.Add(_BookingID);
+                m_Command.Parameters.Add(_WorkingDayID);
+
+                iRet = m_Command.ExecuteNonQuery();
+
+            }
+
+            return iRet;
+        }
+
     }
 }

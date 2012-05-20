@@ -17,21 +17,20 @@ namespace ABS2.AdminFolder
 
                 if (User.IsInRole("Admin"))
                 {
-
-                    
-                    
-
-
+                    Response.Redirect("/AdminArea.aspx");
                 }
                 else
                 {
-
-                   
+                    Response.Redirect("~/AdminFolder/AdminLogin.aspx?message=You are not authourised for this content.");
                 }
 
             }
 
-            else { }
+            else
+            {
+
+                //Response.Redirect("~/AdminFolder/AdminLogin.aspx?message=You are not authourised for this content.");
+            }
 
         }
     }

@@ -17,7 +17,7 @@ namespace ABS2.Controls
             }
             else
             {
-                LoginStatus2.Text = "<li><a href='../Login.aspx'>Login</a></li>";
+                LoginStatus2.Text = "<li><a href='~/AdminFolder/AdminLogin.aspx'>Login</a></li>";
             }
 
 

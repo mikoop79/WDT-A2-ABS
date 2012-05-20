@@ -29,109 +29,110 @@ Check Availability
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:GridView ID="grdAvailability" runat="server" 
-            DataSourceID="ObjectDataSource1" DataKeyNames="BookingID, Title,_7AMSlot,_8AMSlot,_9AMSlot,_10AMSlot,_11AMSlot,_12PMSlot,_1PMSlot,
+            DataSourceID="ObjectDataSource1" DataKeyNames="BookingID,Title,StartDate,EndDate,_7AMSlot,_8AMSlot,_9AMSlot,_10AMSlot,_11AMSlot,_12PMSlot,_1PMSlot,
             _2PMSlot,_3PMSlot,_4PMSlot,_5PMSlot,_6PMSlot,_7PMSlot,_8PMSlot" AutoGenerateColumns="False" 
                 AllowPaging="True" AllowSorting="True" 
                 onselectedindexchanged="grdAvailability_SelectedIndexChanged" 
-                onrowdatabound="grdAvailability_RowDataBound">
+                onrowdatabound="grdAvailability_RowDataBound" 
+                onrowcommand="grdAvailability_RowCommand">
                 <Columns>
-                    <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />
+                    <asp:BoundField DataField="BookingID" HeaderText="ID" Visible="False" />
                     <asp:BoundField DataField="Title" HeaderText="Title" />
                     <asp:BoundField DataField="_7AMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="7">
                         <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn7" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn7" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl7" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_8AMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="8">
                         <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn8" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn8" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl8" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_9AMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="9">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn9" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn9" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl9" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_10AMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="10">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn10" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn10" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl10" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_11AMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="11">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn11" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn11" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl11" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_12PMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="12">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn12" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn12" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl12" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_1PMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="13">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn13" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn13" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl13" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_2PMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="14">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn14" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn14" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl14" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_3PMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="15">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn15" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn15" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl15" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_4PMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="16">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn16" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn16" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl16" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_5PMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="17">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn17" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn17" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl17" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_6PMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="18">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn18" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn18" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl18" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_7PMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="19">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn19" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn19" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl19" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="_8PMSlot" HeaderText="ID" Visible="False" />
                     <asp:TemplateField HeaderText="20">
                             <ItemTemplate>
-                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn20" Text="Book" runat="server" PostBackUrl="~/MakeAppointment.aspx"></asp:LinkButton>
+                            <asp:LinkButton ClientIDMode="Static" ID="grdLnkBtn20" Text="Book" runat="server" CommandName="redirect"></asp:LinkButton>
                             <asp:Label ClientIDMode="Static" ID="grdLbl20" Text="Booked" runat="server"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
