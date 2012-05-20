@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace ABS2.BusinessObjects
+namespace ABS.BusinessObjects
 {
     public class Booking
     {
@@ -24,8 +24,8 @@ namespace ABS2.BusinessObjects
         DataSet dsExecSelect;
         String ErrorMsg;
         int ErrorNo;
-
-
+     
+ 
         private DataSet _ds;
         private DataTable dt;
         private int iRet;
@@ -33,7 +33,7 @@ namespace ABS2.BusinessObjects
         public DataSet GetConferenceRooms()
         {
             //DBUtil objDBUtil = new DBUtil();
-            // objDBUtil.Name = "usp_get_conference_rooms";
+           // objDBUtil.Name = "usp_get_conference_rooms";
             //_ds = objDBUtil.ExecSelect();
             //return _ds;
             m_DBConnection = new SqlConnection();
@@ -132,7 +132,7 @@ namespace ABS2.BusinessObjects
 
         public DataSet GetAvailability(DateTime dt)
         {
-
+         
             m_DBConnection = new SqlConnection();
             //strCnn = "Data Source=Data Source=WIN-BOP3PF3J8CC\SQLEXPRESSRMIT;Initial Catalog=BookingSystemDB;Integrated Security=True;User ID=sa;Password=cp12";
             strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
@@ -159,10 +159,10 @@ namespace ABS2.BusinessObjects
             m_bIsConnected = false;
 
             return dsExecSelect;
-
+            
         }
 
-        public int InsertBooking(String Title, DateTime StartTime, DateTime EndTime)
+        public int InsertBooking(String Title,DateTime StartTime,DateTime EndTime)
         {
             m_DBConnection = new SqlConnection();
             strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
@@ -200,12 +200,12 @@ namespace ABS2.BusinessObjects
             m_DBConnection = null;
             m_Command = null;
             m_bIsConnected = false;
-
+            
             return iRet;
         }
 
 
-        public int InsertBookingObjectWorkingDay(int BookingID, int[] Days)
+        public int InsertBookingObjectWorkingDay(int BookingID,int[] Days)
         {
             int i;
             m_DBConnection = new SqlConnection();
@@ -217,7 +217,7 @@ namespace ABS2.BusinessObjects
             m_Command = new SqlCommand(m_CommandText, m_DBConnection);
             m_Command.CommandTimeout = m_Timeout;
             m_Command.CommandType = CommandType.StoredProcedure;
-
+                
 
             for (i = 0; i < Days.Length - 1; i++)
             {
@@ -228,7 +228,7 @@ namespace ABS2.BusinessObjects
                 _BookingID.Size = 10;
                 _BookingID.Direction = ParameterDirection.Input;
                 _BookingID.Value = iRet;
-
+            
                 SqlParameter _WorkingDayID = new SqlParameter();
                 _WorkingDayID.ParameterName = "@WorkingDayId";
                 _WorkingDayID.SqlDbType = SqlDbType.Int;
@@ -238,13 +238,13 @@ namespace ABS2.BusinessObjects
 
                 m_Command.Parameters.Add(_BookingID);
                 m_Command.Parameters.Add(_WorkingDayID);
-
+                
                 iRet = m_Command.ExecuteNonQuery();
-
+            
             }
 
             return iRet;
         }
-
+        
     }
 }
