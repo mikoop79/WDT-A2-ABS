@@ -143,9 +143,9 @@ namespace ABS2.BusinessObjects
 
         public int InsertConferenceRoom(List<SqlParameter> param)
         {
-            //DBUtil objDBUtil = new DBUtil();
-            //objDBUtil.Name = "usp_ins_booking";
-            //iRet = objDBUtil.ExecUpdate(param);
+            /*DBUtil objDBUtil = new DBUtil();
+            objDBUtil.Name = "usp_ins_booking";
+            iRet = objDBUtil.ExecUpdate(param);*/
             return iRet;
         }
 
