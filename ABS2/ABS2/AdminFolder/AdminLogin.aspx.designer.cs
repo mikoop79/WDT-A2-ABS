@@ -19,7 +19,7 @@ namespace ABS2.AdminFolder {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ABS2.Controls.NavControl NavControlHome;
+        protected global::ABS2.Controls.AdminNavControl NavControlHome;
         
         /// <summary>
         /// Form2 control.

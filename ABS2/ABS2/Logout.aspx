@@ -17,5 +17,5 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
-You have success fully logged out.
+You have successfully logged out.
 </asp:Content>
