@@ -44,7 +44,8 @@ namespace ABS2
         {
             if (Request.QueryString.Get("StartDate") != null)
             {
-                FDate.SelectedDate = Convert.ToDateTime(Request.QueryString.Get("StartDate").Replace('-', '/'));
+                String[] times = Request.QueryString.Get("StartDate").Replace('-', '/').Split('/');
+                FDate.SelectedDate = Convert.ToDateTime(times[2] + "/" + times[1] + "/" + times[0]);
             }
         }
 

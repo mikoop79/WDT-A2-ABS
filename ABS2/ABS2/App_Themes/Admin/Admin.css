@@ -178,3 +178,12 @@ h2
 {
     width:200px;
 }
+
+#MainContent_grdAppointmentDetails th
+{
+    display:none;
+}
+#MainContent_grdAppointmentDetails td
+{
+    padding:10px 15px;
+}

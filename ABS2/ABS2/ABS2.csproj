@@ -57,6 +57,7 @@
   <ItemGroup>
     <Content Include="AdminFolder\AdminLogin.aspx" />
     <Content Include="AdminFolder\AdminArea.aspx" />
+    <Content Include="AdminFolder\AppointmentDetails.aspx" />
     <Content Include="App_Data\ASPNETDB.MDF" />
     <Content Include="App_Data\aspnetdb_log.ldf">
       <DependentUpon>ASPNETDB.MDF</DependentUpon>
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="AdminFolder\AdminArea.aspx.designer.cs">
       <DependentUpon>AdminArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\AppointmentDetails.aspx.cs">
+      <DependentUpon>AppointmentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminFolder\AppointmentDetails.aspx.designer.cs">
+      <DependentUpon>AppointmentDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\Appointment.cs" />
     <Compile Include="BusinessObjects\Booking.cs" />

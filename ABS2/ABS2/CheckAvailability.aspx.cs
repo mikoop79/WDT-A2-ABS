@@ -29,6 +29,7 @@ namespace ABS2
         {
             //Booking objBooking = new Booking();
             //ObjectDataSource1.SelectMethod = "objBooking.getAvailability";
+
             ObjectDataSource1.DataBind();
             grdAvailability.DataBind();
             grdAvailability.Visible = true;
@@ -36,12 +37,12 @@ namespace ABS2
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            //PopulateGrid();
+            PopulateGrid();
         }
 
         protected void calTxtBox_OnTextChanged(object sender, EventArgs e)
         {
-            PopulateGrid();
+            //PopulateGrid();
         }
 
         //protected override void OnDataBinding(EventArgs e)
@@ -104,11 +105,11 @@ namespace ABS2
                 Boolean b7PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[16]);
                 Boolean b8PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[17]);
 
-                int len = StartDt.IndexOf(" ");
-                StartDt = StartDt.Substring(0,len);
+                //int len = StartDt.IndexOf(" ");
+                StartDt = calTxtBox.Text.Replace('/', '-');
                 LinkButton grdLnkBtn7 = e.Row.FindControl("grdLnkBtn7") as LinkButton;
                 grdLnkBtn7.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=7";
-                grdLnkBtn7.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=7";
+                grdLnkBtn7.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=7";
                 Label grdLbl7 = e.Row.FindControl("grdLbl7") as Label;
                 if (b7AMSlotVal == true)
                 {
@@ -123,7 +124,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn8 = e.Row.FindControl("grdLnkBtn8") as LinkButton;
                 grdLnkBtn8.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=8";
-                grdLnkBtn8.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=8";
+                grdLnkBtn8.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=8";
                 Label grdLbl8 = e.Row.FindControl("grdLbl8") as Label;
                 if (b8AMSlotVal == true)
                 {
@@ -139,7 +140,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn9 = e.Row.FindControl("grdLnkBtn9") as LinkButton;
                 grdLnkBtn9.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=9";
-                grdLnkBtn9.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=9";
+                grdLnkBtn9.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=9";
                 Label grdLbl9 = e.Row.FindControl("grdLbl9") as Label;
                 if (b9AMSlotVal == true)
                 {
@@ -154,7 +155,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn10 = e.Row.FindControl("grdLnkBtn10") as LinkButton;
                 grdLnkBtn10.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=10";
-                grdLnkBtn10.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=10";
+                grdLnkBtn10.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=10";
                 Label grdLbl10 = e.Row.FindControl("grdLbl10") as Label;
                 if (b10AMSlotVal == true)
                 {
@@ -169,7 +170,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn11 = e.Row.FindControl("grdLnkBtn11") as LinkButton;
                 grdLnkBtn11.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=11";
-                grdLnkBtn11.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=11";
+                grdLnkBtn11.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=11";
                 Label grdLbl11 = e.Row.FindControl("grdLbl11") as Label;
                 if (b11AMSlotVal == true)
                 {
@@ -184,7 +185,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn12 = e.Row.FindControl("grdLnkBtn12") as LinkButton;
                 grdLnkBtn12.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=12";
-                grdLnkBtn12.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=12";
+                grdLnkBtn12.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=12";
                 Label grdLbl12 = e.Row.FindControl("grdLbl12") as Label;
                 if (b12PMSlotVal == true)
                 {
@@ -199,7 +200,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn13 = e.Row.FindControl("grdLnkBtn13") as LinkButton;
                 grdLnkBtn13.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=13";
-                grdLnkBtn13.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=13";
+                grdLnkBtn13.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=13";
                 Label grdLbl13 = e.Row.FindControl("grdLbl13") as Label;
                 if (b1PMSlotVal == true)
                 {
@@ -214,7 +215,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn14 = e.Row.FindControl("grdLnkBtn14") as LinkButton;
                 grdLnkBtn14.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=14";
-                grdLnkBtn14.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=14";
+                grdLnkBtn14.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=14";
                 Label grdLbl14 = e.Row.FindControl("grdLbl14") as Label;
                 if (b2PMSlotVal == true)
                 {
@@ -229,7 +230,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn15 = e.Row.FindControl("grdLnkBtn15") as LinkButton;
                 grdLnkBtn15.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=15";
-                grdLnkBtn15.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=15";
+                grdLnkBtn15.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=15";
                 Label grdLbl15 = e.Row.FindControl("grdLbl15") as Label;
                 if (b3PMSlotVal == true)
                 {
@@ -244,7 +245,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn16 = e.Row.FindControl("grdLnkBtn16") as LinkButton;
                 grdLnkBtn16.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=16";
-                grdLnkBtn16.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=16";
+                grdLnkBtn16.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=16";
                 Label grdLbl16 = e.Row.FindControl("grdLbl16") as Label;
                 if (b4PMSlotVal == true)
                 {
@@ -259,7 +260,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn17 = e.Row.FindControl("grdLnkBtn17") as LinkButton;
                 grdLnkBtn17.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=17";
-                grdLnkBtn17.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=17";
+                grdLnkBtn17.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=17";
                 Label grdLbl17 = e.Row.FindControl("grdLbl17") as Label;
                 if (b5PMSlotVal == true)
                 {
@@ -274,7 +275,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn18 = e.Row.FindControl("grdLnkBtn18") as LinkButton;
                 grdLnkBtn18.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=18";
-                grdLnkBtn18.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=18";
+                grdLnkBtn18.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=18";
                 Label grdLbl18 = e.Row.FindControl("grdLbl18") as Label;
                 if (b6PMSlotVal == true)
                 {
@@ -289,7 +290,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn19 = e.Row.FindControl("grdLnkBtn19") as LinkButton;
                 grdLnkBtn19.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=19";
-                grdLnkBtn19.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=19";
+                grdLnkBtn19.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=19";
                 Label grdLbl19 = e.Row.FindControl("grdLbl19") as Label;
                 if (b7PMSlotVal == true)
                 {
@@ -304,7 +305,7 @@ namespace ABS2
 
                 LinkButton grdLnkBtn20 = e.Row.FindControl("grdLnkBtn20") as LinkButton;
                 grdLnkBtn20.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=20";
-                grdLnkBtn20.PostBackUrl = "~MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=20";
+                grdLnkBtn20.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=20";
                 Label grdLbl20 = e.Row.FindControl("grdLbl20") as Label;
                 if (b8PMSlotVal == true)
                 {

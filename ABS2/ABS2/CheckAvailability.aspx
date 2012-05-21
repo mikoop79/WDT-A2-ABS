@@ -11,12 +11,13 @@ Check Availability
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
 <form id="form1" runat="server">
+<asp:Label ID="TEST" Text="Booked" runat="server"></asp:Label>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
         
     </asp:ScriptManager>
     <asp:TextBox ID="calTxtBox" runat="server" OnTextChanged="calTxtBox_OnTextChanged"></asp:TextBox>
             <img id="calID" src="/App_Themes/User/images/calendar_icon.gif" alt="Please select date" />
-            <cc1:CalendarExtender id="calTxtBox_CalendarExtender" runat="server" enabled="True" TargetControlID="calTxtBox" PopupButtonID="calID" >
+            <cc1:CalendarExtender id="calTxtBox_CalendarExtender" runat="server" enabled="True" Format="yyyy-MM-dd" TargetControlID="calTxtBox"  PopupButtonID="calID" >
             </cc1:CalendarExtender>
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
                         

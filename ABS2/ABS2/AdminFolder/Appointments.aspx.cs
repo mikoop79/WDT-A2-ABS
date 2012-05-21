@@ -15,7 +15,11 @@ namespace ABS2.AdminFolder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                calTxtBox.Text = DateTime.Now.Date.AddDays(-2.00).ToString("yyyy-MM-dd");
+                getAppointments();
+            }
             
         }
 
@@ -24,16 +28,16 @@ namespace ABS2.AdminFolder
             if (calTxtBox.Text != null) {
 
                 DateTime Date = Convert.ToDateTime(calTxtBox.Text);
-
-                getAppointments(Date);
+                getAppointments();
             }
 
         }
 
-        protected void getAppointments(DateTime Date)
+        protected void getAppointments()
         {
-            Appointment ap = new Appointment();
-            ap.GetAllAppointmentsForDate(Date);
+            ObjectDataSource1.DataBind();
+            grdAppointmentDetails.DataBind();
+            grdAppointmentDetails.Visible = true;
 
             //btnSearch.Text = ap.GetAllAppointmentsForDate(Date).ToString();
         }
@@ -45,7 +49,7 @@ namespace ABS2.AdminFolder
 
                 DateTime Date = Convert.ToDateTime(calTxtBox.Text);
 
-                getAppointments(Date);
+                getAppointments();
             }
         }
 
@@ -56,7 +60,27 @@ namespace ABS2.AdminFolder
 
                 DateTime Date = Convert.ToDateTime(calTxtBox.Text);
 
-                getAppointments(Date);
+                getAppointments();
+            }
+        }
+
+        protected void grdAppointmentDetails_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                String AppointmentID = Convert.ToString(grdAppointmentDetails.DataKeys[e.Row.RowIndex].Values[0]);
+                String Title = Convert.ToString(grdAppointmentDetails.DataKeys[e.Row.RowIndex].Values[2]);
+                String UserName = Convert.ToString(grdAppointmentDetails.DataKeys[e.Row.RowIndex].Values[3]);
+                String AppointmentDate = Convert.ToString(grdAppointmentDetails.DataKeys[e.Row.RowIndex].Values[4]);
+                String StartTime = Convert.ToString(grdAppointmentDetails.DataKeys[e.Row.RowIndex].Values[5]);
+                String EndTime = Convert.ToString(grdAppointmentDetails.DataKeys[e.Row.RowIndex].Values[6]);
+
+                Label gridviewLbl = e.Row.FindControl("grdLbl") as Label;
+                gridviewLbl.Text = "Appointment with " + Title + " for " + UserName + " from " + AppointmentDate + " " + StartTime + " to " + EndTime;
+
+                HyperLink gridviewHyperLnk = e.Row.FindControl("grdHyperLink") as HyperLink;
+                gridviewHyperLnk.NavigateUrl = "~/AdminFolder/AppointmentDetails.aspx?roomid=" + AppointmentID;
+ 
             }
         }
 

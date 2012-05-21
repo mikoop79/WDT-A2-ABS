@@ -21,9 +21,17 @@ namespace ABS2.AdminFolder
             } 
             else if ( Request.Form["Save"]!=null )
             {
-                saveRoom();
+                this.IsEditing = true;
+                if (saveRoom())
+                {
+                    Feedback.Text = "Room has been saved.";
+                }
+                else
+                {
+                    //Feedback.Text = "Room has not been saved. An error occurred when saving data to the database.";
+                }
             }
-            if (Request.QueryString.Get("roomid") != null)
+            else if (Request.QueryString.Get("roomid") != null)
             {
                 this.IsEditing = true;
                 if ( Convert.ToInt32(Request.QueryString.Get("roomid")) != -1)
@@ -99,12 +107,12 @@ namespace ABS2.AdminFolder
             return bookingID;
         }
         
-        protected void saveRoom()
+        protected Boolean saveRoom()
         {
             int iret = 0;
             string strBookingDays = String.Empty;
             int i = 0;
-            for (i=0;i < Available.Items.Count -1;i++)
+            for (i=0; i < Available.Items.Count; i++)
             {
                 if (Available.Items[i].Selected  == true)
                 {
@@ -120,7 +128,7 @@ namespace ABS2.AdminFolder
             {
                 iret = objBooking.UpdateBooking(bookingID, RoomTitle.Text, Convert.ToDateTime(First.SelectedValue), Convert.ToDateTime(Last.SelectedValue), strBookingDays);
             }
-            
+            return (iret >= 0);
         }
 
         protected void OnGridViewRowCreated(object sender, GridViewRowEventArgs e)

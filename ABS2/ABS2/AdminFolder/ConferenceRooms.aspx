@@ -65,6 +65,9 @@ Manage Conference Rooms
                 <asp:ListItem Value="7">Sunday </asp:ListItem>
             </asp:CheckBoxList>
         </p>
+        <div class="clear"></div>
+        <p><asp:Label ID="Feedback" runat="server" Text=""></asp:Label><br/></p>
+        <div class="clear"></div>
         <p>
             <input type="submit" value="Save" name="Save" />
             <input type="submit" value="Cancel" name="Cancel" />
