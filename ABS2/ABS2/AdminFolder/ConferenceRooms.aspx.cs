@@ -111,7 +111,7 @@ namespace ABS2.AdminFolder
                     strBookingDays += Available.Items[i].Value + ",";
                 }
             }
-            iret = objBooking.updateBooking(Convert.ToInt32(RoomID.Value),Convert.ToDateTime(First.SelectedItem.Value), Convert.ToDateTime(Last.SelectedItem.Value), strBookingDays);
+            iret = objBooking.updateBooking(GetBookingID(), Convert.ToDateTime(First.SelectedValue), Convert.ToDateTime(Last.SelectedValue), strBookingDays);
         }
 
         protected void OnGridViewRowCreated(object sender, GridViewRowEventArgs e)
