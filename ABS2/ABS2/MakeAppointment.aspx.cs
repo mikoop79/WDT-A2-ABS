@@ -14,19 +14,34 @@ namespace ABS2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            FDateBound();
-            FRoomIDUpdate.Value = FRoomID.SelectedValue; //for Time Object source
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
 
-            if (MakeAppointmentWizard.ActiveStepIndex == 4)
-            {
-                Feedback.Text = "";
+                FDateBound();
+                FRoomIDUpdate.Value = FRoomID.SelectedValue; //for Time Object source
+
+                if (MakeAppointmentWizard.ActiveStepIndex == 4)
+                {
+                    Feedback.Text = "";
+                }
+                if (MakeAppointmentWizard.ActiveStepIndex == 4)
+                {
+                    SummaryRoom.Text = FRoomID.SelectedItem.Text;
+                    SummaryDate.Text = FDate.SelectedDate.ToShortDateString();
+                    SummaryTime.Text = FTime.SelectedItem.Text;
+                    SummaryComment.Text = FComment.Text;
+                }
+
             }
-            if (MakeAppointmentWizard.ActiveStepIndex == 4)
+
+           
+
+            
+
+            else
             {
-                SummaryRoom.Text = FRoomID.SelectedItem.Text;
-                SummaryDate.Text = FDate.SelectedDate.ToShortDateString();
-                SummaryTime.Text = FTime.SelectedItem.Text;
-                SummaryComment.Text = FComment.Text;
+
+                Response.Redirect("~/Login.aspx?message=You must login to book an event.");
             }
         }
 
