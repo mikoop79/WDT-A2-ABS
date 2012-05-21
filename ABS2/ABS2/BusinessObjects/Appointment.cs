@@ -33,7 +33,7 @@ namespace ABS2.BusinessObjects
         //This method is to check whether the record exists in the database or not. It needs to be called before inserting the appointment.
         //The stored procedure returns a column "Return_Value" with a value of -1(If a record already exists) OR 1(If it doesn't exists).
         //Hence if that return_value is 1 then we can proceed with executing the method InsertAppointment
-        public Boolean CheckForDuplicateAppointment(String UserName, DateTime StartDate, DateTime EndDate, int BookingObjectID)
+        public Boolean CheckForDuplicateAppointment(DateTime StartDate, DateTime EndDate, int BookingObjectID)
         {
             Boolean returnValue;
             m_DBConnection = new SqlConnection();
@@ -46,12 +46,6 @@ namespace ABS2.BusinessObjects
             m_Command.CommandTimeout = m_Timeout;
             m_Command.CommandType = CommandType.StoredProcedure;
             dsExecSelect = new DataSet();
-            SqlParameter _UserName = new SqlParameter();
-            _UserName.ParameterName = "@UserName";
-            _UserName.SqlDbType = SqlDbType.NVarChar;
-            _UserName.Size = 256;
-            _UserName.Direction = ParameterDirection.Input;
-            _UserName.Value = UserName;
             SqlParameter _StartDate = new SqlParameter();
             _StartDate.ParameterName = "@StartDate";
             _StartDate.SqlDbType = SqlDbType.DateTime;
@@ -70,7 +64,6 @@ namespace ABS2.BusinessObjects
             _BookingObjectID.Size = 10;
             _BookingObjectID.Direction = ParameterDirection.Input;
             _BookingObjectID.Value = BookingObjectID;
-            m_Command.Parameters.Add(_UserName);
             m_Command.Parameters.Add(_StartDate);
             m_Command.Parameters.Add(_EndDate);
             m_Command.Parameters.Add(_BookingObjectID);
@@ -82,7 +75,6 @@ namespace ABS2.BusinessObjects
             m_bIsConnected = false;
 
             returnValue = Convert.ToBoolean(dsExecSelect.Tables[0].Rows[0].ItemArray[0].ToString());
-
             return returnValue;
         }
 

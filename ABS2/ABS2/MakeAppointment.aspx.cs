@@ -101,7 +101,11 @@ namespace ABS2
             String email = mu.Email;
             String username = mu.UserName;
 
-            int returnValue = new Appointment().InsertAppointment(username, email, StartDate, EndDate, comment, RoomID);
+            Appointment app = new Appointment();
+            if (!app.CheckForDuplicateAppointment(StartDate, EndDate, RoomID))
+                return false;
+
+            int returnValue = app.InsertAppointment(username, email, StartDate, EndDate, comment, RoomID);
             return returnValue != 0;
         }
     }

@@ -90,20 +90,20 @@ namespace ABS2
                 String BookingID = Convert.ToString(grdAvailability.DataKeys[e.Row.RowIndex].Values[0]);
                 String StartDt = Convert.ToString(grdAvailability.DataKeys[e.Row.RowIndex].Values[2]);
                 String EndDt = Convert.ToString(grdAvailability.DataKeys[e.Row.RowIndex].Values[3]);
-                Boolean b7AMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[4]);
-                Boolean b8AMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[5]);
-                Boolean b9AMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[6]);
-                Boolean b10AMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[7]);
-                Boolean b11AMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[8]);
-                Boolean b12PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[9]);
-                Boolean b1PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[10]);
-                Boolean b2PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[11]);
-                Boolean b3PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[12]);
-                Boolean b4PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[13]);
-                Boolean b5PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[14]);
-                Boolean b6PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[15]);
-                Boolean b7PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[16]);
-                Boolean b8PMSlotVal = Convert.ToBoolean(grdAvailability.DataKeys[e.Row.RowIndex].Values[17]);
+                int b7AMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[4]);
+                int b8AMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[5]);
+                int b9AMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[6]);
+                int b10AMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[7]);
+                int b11AMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[8]);
+                int b12PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[9]);
+                int b1PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[10]);
+                int b2PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[11]);
+                int b3PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[12]);
+                int b4PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[13]);
+                int b5PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[14]);
+                int b6PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[15]);
+                int b7PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[16]);
+                int b8PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[17]);
 
                 //int len = StartDt.IndexOf(" ");
                 StartDt = calTxtBox.Text.Replace('/', '-');
@@ -111,12 +111,19 @@ namespace ABS2
                 grdLnkBtn7.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=7";
                 grdLnkBtn7.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=7";
                 Label grdLbl7 = e.Row.FindControl("grdLbl7") as Label;
-                if (b7AMSlotVal == true)
+                if (b7AMSlotVal == 2)
                 {
                     grdLnkBtn7.Visible = false;
+                    grdLbl7.Text = "N/A";
                     grdLbl7.Visible = true;
                 }
-                else
+                else if (b7AMSlotVal == 1)
+                {
+                    grdLnkBtn7.Visible = false;
+                    grdLbl7.Text = "Booked";
+                    grdLbl7.Visible = true;
+                }
+                else if (b7AMSlotVal == 0)
                 {
                     grdLnkBtn7.Visible = true;
                     grdLbl7.Visible = false;
@@ -126,12 +133,19 @@ namespace ABS2
                 grdLnkBtn8.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=8";
                 grdLnkBtn8.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=8";
                 Label grdLbl8 = e.Row.FindControl("grdLbl8") as Label;
-                if (b8AMSlotVal == true)
+                if (b8AMSlotVal == 2)
                 {
                     grdLnkBtn8.Visible = false;
+                    grdLbl8.Text = "N/A";
                     grdLbl8.Visible = true;
                 }
-                else
+                else if (b8AMSlotVal == 1)
+                {
+                    grdLnkBtn8.Visible = false;
+                    grdLbl8.Text = "Booked";
+                    grdLbl8.Visible = true;
+                }
+                else if (b8AMSlotVal == 0)
                 {
                     grdLnkBtn8.Visible = true;
                     grdLbl8.Visible = false;
@@ -142,12 +156,19 @@ namespace ABS2
                 grdLnkBtn9.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=9";
                 grdLnkBtn9.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=9";
                 Label grdLbl9 = e.Row.FindControl("grdLbl9") as Label;
-                if (b9AMSlotVal == true)
+                if (b9AMSlotVal == 2)
                 {
                     grdLnkBtn9.Visible = false;
+                    grdLbl9.Text = "N/A";
                     grdLbl9.Visible = true;
                 }
-                else
+                else if (b9AMSlotVal == 1)
+                {
+                    grdLnkBtn9.Visible = false;
+                    grdLbl9.Text = "Booked";
+                    grdLbl9.Visible = true;
+                }
+                else if (b9AMSlotVal == 0)
                 {
                     grdLnkBtn9.Visible = true;
                     grdLbl9.Visible = false;
@@ -157,12 +178,19 @@ namespace ABS2
                 grdLnkBtn10.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=10";
                 grdLnkBtn10.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=10";
                 Label grdLbl10 = e.Row.FindControl("grdLbl10") as Label;
-                if (b10AMSlotVal == true)
+                if (b10AMSlotVal == 2)
                 {
                     grdLnkBtn10.Visible = false;
+                    grdLbl10.Text = "N/A";
                     grdLbl10.Visible = true;
                 }
-                else
+                else if (b10AMSlotVal == 1)
+                {
+                    grdLnkBtn10.Visible = false;
+                    grdLbl10.Text = "Booked";
+                    grdLbl10.Visible = true;
+                }
+                else if (b10AMSlotVal == 0)
                 {
                     grdLnkBtn10.Visible = true;
                     grdLbl10.Visible = false;
@@ -172,12 +200,19 @@ namespace ABS2
                 grdLnkBtn11.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=11";
                 grdLnkBtn11.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=11";
                 Label grdLbl11 = e.Row.FindControl("grdLbl11") as Label;
-                if (b11AMSlotVal == true)
+                if (b11AMSlotVal == 2)
                 {
                     grdLnkBtn11.Visible = false;
+                    grdLbl11.Text = "N/A";
                     grdLbl11.Visible = true;
                 }
-                else
+                else if (b11AMSlotVal == 1)
+                {
+                    grdLnkBtn11.Visible = false;
+                    grdLbl11.Text = "Booked";
+                    grdLbl11.Visible = true;
+                }
+                else if (b11AMSlotVal == 0)
                 {
                     grdLnkBtn11.Visible = true;
                     grdLbl11.Visible = false;
@@ -187,12 +222,19 @@ namespace ABS2
                 grdLnkBtn12.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=12";
                 grdLnkBtn12.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=12";
                 Label grdLbl12 = e.Row.FindControl("grdLbl12") as Label;
-                if (b12PMSlotVal == true)
+                if (b12PMSlotVal == 2)
                 {
                     grdLnkBtn12.Visible = false;
+                    grdLbl12.Text = "N/A";
                     grdLbl12.Visible = true;
                 }
-                else
+                else if (b12PMSlotVal == 1)
+                {
+                    grdLnkBtn12.Visible = false;
+                    grdLbl12.Text = "Booked";
+                    grdLbl12.Visible = true;
+                }
+                else if (b12PMSlotVal == 0)
                 {
                     grdLnkBtn12.Visible = true;
                     grdLbl12.Visible = false;
@@ -202,12 +244,19 @@ namespace ABS2
                 grdLnkBtn13.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=13";
                 grdLnkBtn13.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=13";
                 Label grdLbl13 = e.Row.FindControl("grdLbl13") as Label;
-                if (b1PMSlotVal == true)
+                if (b1PMSlotVal == 2)
                 {
                     grdLnkBtn13.Visible = false;
+                    grdLbl13.Text = "N/A";
                     grdLbl13.Visible = true;
                 }
-                else
+                else if (b1PMSlotVal == 1)
+                {
+                    grdLnkBtn13.Visible = false;
+                    grdLbl13.Text = "Booked";
+                    grdLbl13.Visible = true;
+                }
+                else if (b1PMSlotVal == 0)
                 {
                     grdLnkBtn13.Visible = true;
                     grdLbl13.Visible = false;
@@ -217,12 +266,19 @@ namespace ABS2
                 grdLnkBtn14.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=14";
                 grdLnkBtn14.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=14";
                 Label grdLbl14 = e.Row.FindControl("grdLbl14") as Label;
-                if (b2PMSlotVal == true)
+                if (b2PMSlotVal == 2)
                 {
                     grdLnkBtn14.Visible = false;
+                    grdLbl14.Text = "N/A";
                     grdLbl14.Visible = true;
                 }
-                else
+                else if (b2PMSlotVal == 1)
+                {
+                    grdLnkBtn14.Visible = false;
+                    grdLbl14.Text = "Booked";
+                    grdLbl14.Visible = true;
+                }
+                else if (b2PMSlotVal == 0)
                 {
                     grdLnkBtn14.Visible = true;
                     grdLbl14.Visible = false;
@@ -232,12 +288,19 @@ namespace ABS2
                 grdLnkBtn15.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=15";
                 grdLnkBtn15.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=15";
                 Label grdLbl15 = e.Row.FindControl("grdLbl15") as Label;
-                if (b3PMSlotVal == true)
+                if (b3PMSlotVal == 2)
                 {
                     grdLnkBtn15.Visible = false;
+                    grdLbl15.Text = "N/A";
                     grdLbl15.Visible = true;
                 }
-                else
+                else if (b3PMSlotVal == 1)
+                {
+                    grdLnkBtn15.Visible = false;
+                    grdLbl15.Text = "Booked";
+                    grdLbl15.Visible = true;
+                }
+                else if (b3PMSlotVal == 0)
                 {
                     grdLnkBtn15.Visible = true;
                     grdLbl15.Visible = false;
@@ -247,12 +310,19 @@ namespace ABS2
                 grdLnkBtn16.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=16";
                 grdLnkBtn16.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=16";
                 Label grdLbl16 = e.Row.FindControl("grdLbl16") as Label;
-                if (b4PMSlotVal == true)
+                if (b4PMSlotVal == 2)
                 {
                     grdLnkBtn16.Visible = false;
+                    grdLbl16.Text = "N/A";
                     grdLbl16.Visible = true;
                 }
-                else
+                else if (b4PMSlotVal == 1)
+                {
+                    grdLnkBtn16.Visible = false;
+                    grdLbl16.Text = "Booked";
+                    grdLbl16.Visible = true;
+                }
+                else if (b4PMSlotVal == 0)
                 {
                     grdLnkBtn16.Visible = true;
                     grdLbl16.Visible = false;
@@ -262,12 +332,19 @@ namespace ABS2
                 grdLnkBtn17.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=17";
                 grdLnkBtn17.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=17";
                 Label grdLbl17 = e.Row.FindControl("grdLbl17") as Label;
-                if (b5PMSlotVal == true)
+                if (b5PMSlotVal == 2)
                 {
                     grdLnkBtn17.Visible = false;
+                    grdLbl17.Text = "N/A";
                     grdLbl17.Visible = true;
                 }
-                else
+                else if (b5PMSlotVal == 1)
+                {
+                    grdLnkBtn17.Visible = false;
+                    grdLbl17.Text = "Booked";
+                    grdLbl17.Visible = true;
+                }
+                else if (b5PMSlotVal == 0)
                 {
                     grdLnkBtn17.Visible = true;
                     grdLbl17.Visible = false;
@@ -277,12 +354,19 @@ namespace ABS2
                 grdLnkBtn18.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=18";
                 grdLnkBtn18.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=18";
                 Label grdLbl18 = e.Row.FindControl("grdLbl18") as Label;
-                if (b6PMSlotVal == true)
+                if (b6PMSlotVal == 2)
                 {
                     grdLnkBtn18.Visible = false;
+                    grdLbl18.Text = "N/A";
                     grdLbl18.Visible = true;
                 }
-                else
+                else if (b6PMSlotVal == 1)
+                {
+                    grdLnkBtn18.Visible = false;
+                    grdLbl18.Text = "Booked";
+                    grdLbl18.Visible = true;
+                }
+                else if (b6PMSlotVal == 0)
                 {
                     grdLnkBtn18.Visible = true;
                     grdLbl18.Visible = false;
@@ -292,12 +376,19 @@ namespace ABS2
                 grdLnkBtn19.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=19";
                 grdLnkBtn19.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=19";
                 Label grdLbl19 = e.Row.FindControl("grdLbl19") as Label;
-                if (b7PMSlotVal == true)
+                if (b7PMSlotVal == 2)
                 {
                     grdLnkBtn19.Visible = false;
+                    grdLbl19.Text = "N/A";
                     grdLbl19.Visible = true;
                 }
-                else
+                else if (b7PMSlotVal == 1)
+                {
+                    grdLnkBtn19.Visible = false;
+                    grdLbl19.Text = "Booked";
+                    grdLbl19.Visible = true;
+                }
+                else if (b7PMSlotVal == 0)
                 {
                     grdLnkBtn19.Visible = true;
                     grdLbl19.Visible = false;
@@ -307,12 +398,19 @@ namespace ABS2
                 grdLnkBtn20.CommandArgument = "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=20";
                 grdLnkBtn20.PostBackUrl = "/MakeAppointment.aspx?" + "StartDate=" + StartDt + "&RoomID=" + BookingID + "&Time=20";
                 Label grdLbl20 = e.Row.FindControl("grdLbl20") as Label;
-                if (b8PMSlotVal == true)
+                if (b8PMSlotVal == 2)
                 {
                     grdLnkBtn20.Visible = false;
+                    grdLbl20.Text = "N/A";
                     grdLbl20.Visible = true;
                 }
-                else
+                else if (b8PMSlotVal == 1)
+                {
+                    grdLnkBtn20.Visible = false;
+                    grdLbl20.Text = "Booked";
+                    grdLbl20.Visible = true;
+                }
+                else if (b8PMSlotVal == 0)
                 {
                     grdLnkBtn20.Visible = true;
                     grdLbl20.Visible = false;
