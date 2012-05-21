@@ -44,8 +44,15 @@ namespace ABS2
         {
             if (Request.QueryString.Get("StartDate") != null)
             {
-                String[] times = Request.QueryString.Get("StartDate").Replace('-', '/').Split('/');
-                FDate.SelectedDate = Convert.ToDateTime(times[2] + "/" + times[1] + "/" + times[0]);
+                try
+                {
+                    String[] times = Request.QueryString.Get("StartDate").Replace('-', '/').Split('/');
+                    FDate.SelectedDate = Convert.ToDateTime(times[2] + "/" + times[1] + "/" + times[0]);
+                }
+                catch
+                {
+
+                }
             }
         }
 
@@ -53,9 +60,16 @@ namespace ABS2
         {
             if (Request.QueryString.Get("Time") != null)
             {
-                FTime.ClearSelection();
-                String time = Convert.ToInt32(Request.QueryString.Get("Time")).ToString("00") + ":00";
-                FTime.Items.FindByValue(time).Selected = true;
+                try
+                {
+                    FTime.ClearSelection();
+                    String time = Convert.ToInt32(Request.QueryString.Get("Time")).ToString("00") + ":00";
+                    FTime.Items.FindByValue(time).Selected = true;
+                }
+                catch
+                {
+
+                }
             }
         }
 
