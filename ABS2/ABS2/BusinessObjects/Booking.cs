@@ -24,8 +24,8 @@ namespace ABS2.BusinessObjects
         DataSet dsExecSelect;
         String ErrorMsg;
         int ErrorNo;
-     
- 
+
+
         private DataSet _ds;
         private DataTable dt;
         private int iRet;
@@ -129,7 +129,7 @@ namespace ABS2.BusinessObjects
             DataTable dsT = ds.Tables.Add();
             dsT.Columns.Add("Value", typeof(string));
             dsT.Columns.Add("Text", typeof(string));
-            for (int t = start; t <= end; t++) 
+            for (int t = start; t <= end; t++)
             {
                 String time = t.ToString("00") + ":00";
                 dsT.Rows.Add(time, time);
@@ -139,7 +139,7 @@ namespace ABS2.BusinessObjects
 
         public DataSet GetAvailability(DateTime dt)
         {
-         
+
             m_DBConnection = new SqlConnection();
             strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
             m_DBConnection.ConnectionString = strCnn;
@@ -165,10 +165,10 @@ namespace ABS2.BusinessObjects
             m_bIsConnected = false;
 
             return dsExecSelect;
-            
+
         }
 
-        public int InsertBooking(String Title,DateTime StartTime,DateTime EndTime)
+        public int InsertBooking(String Title, DateTime StartTime, DateTime EndTime, String Days)
         {
             m_DBConnection = new SqlConnection();
             strCnn = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
@@ -202,16 +202,49 @@ namespace ABS2.BusinessObjects
             m_Command.Parameters.Add(_startTime);
             m_Command.Parameters.Add(_endTime);
             iRet = m_Command.ExecuteNonQuery();
+            int BookingID = iRet;
+
+            m_Command = null;
+
+            m_CommandText = "usp_ins_BookingObjectWorkingDay";
+            m_Command = new SqlCommand(m_CommandText, m_DBConnection);
+            m_Command.CommandTimeout = m_Timeout;
+            m_Command.CommandType = CommandType.StoredProcedure;
+
+            int i;
+            for (i = 0; i < Days.Length - 1; i++)
+            {
+                //dsExecSelect = new DataSet();
+                SqlParameter _BookingID = new SqlParameter();
+                _BookingID.ParameterName = "@BookingObjectId";
+                _BookingID.SqlDbType = SqlDbType.Int;
+                _BookingID.Size = 10;
+                _BookingID.Direction = ParameterDirection.Input;
+                _BookingID.Value = BookingID;
+
+                SqlParameter _WorkingDayID = new SqlParameter();
+                _WorkingDayID.ParameterName = "@WorkingDayId";
+                _WorkingDayID.SqlDbType = SqlDbType.Int;
+                _WorkingDayID.Size = 20;
+                _WorkingDayID.Direction = ParameterDirection.Input;
+                _WorkingDayID.Value = Days[i];
+
+                m_Command.Parameters.Add(_BookingID);
+                m_Command.Parameters.Add(_WorkingDayID);
+
+                iRet = m_Command.ExecuteNonQuery();
+
+            }
+
             m_DBConnection.Close();
             m_DBConnection = null;
             m_Command = null;
             m_bIsConnected = false;
-            
+
             return iRet;
         }
 
-
-        public int updateBooking(int BookingID,DateTime StartTime, DateTime EndTime, string Days)
+        public int UpdateBooking(int BookingID, String Title, DateTime StartTime, DateTime EndTime, String Days)
         {
             int i;
             m_DBConnection = new SqlConnection();
@@ -231,6 +264,13 @@ namespace ABS2.BusinessObjects
             _uBookingID.Direction = ParameterDirection.Input;
             _uBookingID.Value = BookingID;
 
+            SqlParameter _uTitle = new SqlParameter();
+            _uTitle.ParameterName = "@Title";
+            _uTitle.SqlDbType = SqlDbType.NVarChar;
+            _uTitle.Size = 100;
+            _uTitle.Direction = ParameterDirection.Input;
+            _uTitle.Value = Title;
+
             SqlParameter _StartTime = new SqlParameter();
             _StartTime.ParameterName = "@StartTime";
             _StartTime.SqlDbType = SqlDbType.DateTime;
@@ -246,19 +286,38 @@ namespace ABS2.BusinessObjects
             _EndTime.Value = EndTime;
 
             m_Command.Parameters.Add(_uBookingID);
+            m_Command.Parameters.Add(_uTitle);
             m_Command.Parameters.Add(_StartTime);
             m_Command.Parameters.Add(_EndTime);
 
             iRet = m_Command.ExecuteNonQuery();
 
             m_Command = null;
-                       
+
+            m_CommandText = "usp_del_BookingObjectWorkingDay";
+            m_Command = new SqlCommand(m_CommandText, m_DBConnection);
+            m_Command.CommandTimeout = m_Timeout;
+            m_Command.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter _dBookingID = new SqlParameter();
+            _dBookingID.ParameterName = "@BookingObjectId";
+            _dBookingID.SqlDbType = SqlDbType.Int;
+            _dBookingID.Size = 10;
+            _dBookingID.Direction = ParameterDirection.Input;
+            _dBookingID.Value = BookingID;
+
+            m_Command.Parameters.Add(_dBookingID);
+
+            iRet = m_Command.ExecuteNonQuery();
+
+            m_Command = null;
+
             m_CommandText = "usp_ins_BookingObjectWorkingDay";
             m_Command = new SqlCommand(m_CommandText, m_DBConnection);
             m_Command.CommandTimeout = m_Timeout;
             m_Command.CommandType = CommandType.StoredProcedure;
 
-          
+
             for (i = 0; i < Days.Length - 1; i++)
             {
                 //dsExecSelect = new DataSet();
@@ -268,7 +327,7 @@ namespace ABS2.BusinessObjects
                 _BookingID.Size = 10;
                 _BookingID.Direction = ParameterDirection.Input;
                 _BookingID.Value = BookingID;
-            
+
                 SqlParameter _WorkingDayID = new SqlParameter();
                 _WorkingDayID.ParameterName = "@WorkingDayId";
                 _WorkingDayID.SqlDbType = SqlDbType.Int;
@@ -278,13 +337,13 @@ namespace ABS2.BusinessObjects
 
                 m_Command.Parameters.Add(_BookingID);
                 m_Command.Parameters.Add(_WorkingDayID);
-                
+
                 iRet = m_Command.ExecuteNonQuery();
-            
+
             }
 
             return iRet;
         }
-        
+
     }
 }

@@ -13,7 +13,6 @@
 Manage Conference Rooms
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
-<asp:Label ID="TEST" runat="server" Text="Title: "></asp:Label>
     <% if (!this.IsEditing){ %>
     <form id="form1" runat="server">
         <p>This page allows you to manage the existing conference rooms in the appointment booking system. Click the "New Conference Room" or click "Edit" button to edit an exisiting Conference Room.</p>
