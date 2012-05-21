@@ -9,7 +9,7 @@ namespace ABS2.BusinessObjects
 {
     public class Management
     {
-        public DataSet GetAllAvailableTime()
+        public static DataSet GetAllAvailableTime()
         {
             DataSet ds = new DataSet();
             DataTable dsT = ds.Tables.Add();
@@ -21,6 +21,13 @@ namespace ABS2.BusinessObjects
                 dsT.Rows.Add("1900-01-01 "+time+":00.000", time);
             }
             return ds;
+        }
+
+        public static HashSet<String> GetSelectDay(int bookingID)
+        {
+            HashSet<String> selectedDay = new HashSet<String>();
+            selectedDay.Add("1"); //TODO: fill with data from DB
+            return selectedDay;
         }
     }
 }

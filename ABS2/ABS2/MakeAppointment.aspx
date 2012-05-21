@@ -8,9 +8,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="TitleContent" runat="server">
     Make an Appointment
 </asp:Content>
-
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
-<asp:Label ID="TEST" runat="server" Text=""></asp:Label>
     <form id="form1" runat="server">
         <asp:HiddenField ID="FRoomIDUpdate" runat="server" />
         <asp:Wizard ID="MakeAppointmentWizard" runat="server" ActiveStepIndex="0"

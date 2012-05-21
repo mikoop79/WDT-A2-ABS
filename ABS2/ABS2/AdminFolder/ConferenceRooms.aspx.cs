@@ -34,6 +34,71 @@ namespace ABS2.AdminFolder
             }
         }
 
+        protected void AvailableBound(object sender, System.EventArgs e)
+        {
+            int bookingID = GetBookingID();
+            if (bookingID == -1)
+                return;
+            HashSet<String> selectedDay = Management.GetSelectDay(bookingID);
+            foreach(ListItem li in Available.Items)
+            {
+                if (selectedDay.Contains(li.Value))
+                {
+                    li.Selected = true;
+                }
+            }
+        }
+
+        protected void FirstBound(object sender, System.EventArgs e)
+        {
+            int bookingID = GetBookingID();
+            if (bookingID == -1)
+                return;
+             foreach(GridViewRow r in GridView1.Rows)
+             {
+                 if (Convert.ToInt32(r.Cells[1].Text) == bookingID)
+                 {
+                     String time = ConvertTimeString(r.Cells[3].Text); //StartTime
+                     First.ClearSelection();
+                     First.Items.FindByText(time).Selected = true;
+                     break;
+                 }
+             }
+        }
+
+        protected void LastBound(object sender, System.EventArgs e)
+        {
+            int bookingID = GetBookingID();
+            if (bookingID == -1)
+                return;
+            foreach (GridViewRow r in GridView1.Rows)
+            {
+                if (Convert.ToInt32(r.Cells[1].Text) == bookingID)
+                {
+                    String time = ConvertTimeString(r.Cells[4].Text); //EndTime
+                    Last.ClearSelection();
+                    Last.Items.FindByText(time).Selected = true;
+                    break;
+                }
+            }
+        }
+
+        private String ConvertTimeString(String s)
+        {
+            DateTime dt = Convert.ToDateTime(s);
+            int hour = dt.Hour;
+            int min = dt.Minute;
+            return hour.ToString("00") + ":" + min.ToString("00");
+        }
+
+        private int GetBookingID()
+        {
+            if (RoomID.Value == "")
+                return -1;
+            int bookingID = Convert.ToInt32(RoomID.Value);
+            return bookingID;
+        }
+        
         protected void saveRoom()
         {
             int iret = 0;
@@ -43,7 +108,7 @@ namespace ABS2.AdminFolder
             {
                 if (Available.Items[i].Selected  == true)
                 {
-                strBookingDays += Available.Items[i].Value + ",";
+                    strBookingDays += Available.Items[i].Value + ",";
                 }
             }
             iret = objBooking.updateBooking(Convert.ToInt32(RoomID.Value),Convert.ToDateTime(First.SelectedItem.Value), Convert.ToDateTime(Last.SelectedItem.Value), strBookingDays);

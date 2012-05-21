@@ -13,6 +13,7 @@
 Manage Conference Rooms
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Label ID="TEST" runat="server" Text="Title: "></asp:Label>
     <% if (!this.IsEditing){ %>
     <form id="form1" runat="server">
         <p>This page allows you to manage the existing conference rooms in the appointment booking system. Click the "New Conference Room" or click "Edit" button to edit an exisiting Conference Room.</p>
@@ -39,15 +40,14 @@ Manage Conference Rooms
         </p>
         <p>
             <asp:Label ID="Label2" runat="server" Text="First appointment can start at: "></asp:Label>
-            <asp:DropDownList ID="First" runat="server" 
+            <asp:DropDownList ID="First" runat="server" OnDataBound="FirstBound"
                 DataSourceID="AvailableTimeDataSource" DataTextField="Text" 
                 DataValueField="Value">
-
             </asp:DropDownList>
         </p>
         <p>
             <asp:Label ID="Label3" runat="server" Text="Last appointment can start at: "></asp:Label>
-            <asp:DropDownList ID="Last" runat="server" 
+            <asp:DropDownList ID="Last" runat="server" OnDataBound="LastBound"
                 DataSourceID="AvailableTimeDataSource" DataTextField="Text" 
                 DataValueField="Value"></asp:DropDownList>
             <asp:ObjectDataSource ID="AvailableTimeDataSource" runat="server" 
@@ -56,7 +56,7 @@ Manage Conference Rooms
         </p>
         <p>
             <asp:Label ID="Label4" runat="server" Text="Available on: "></asp:Label>
-            <asp:CheckBoxList ID="Available" runat="server">
+            <asp:CheckBoxList ID="Available" OnLoad="AvailableBound" runat="server">
                 <asp:ListItem Value="1">Monday</asp:ListItem>
                 <asp:ListItem Value="2">Tuesday </asp:ListItem>
                 <asp:ListItem Value="3">Wednesday</asp:ListItem>
