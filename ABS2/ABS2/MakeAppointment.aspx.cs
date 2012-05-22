@@ -130,6 +130,10 @@ namespace ABS2
             String email = mu.Email;
             String username = mu.UserName;
 
+            int dayofweek = Management.GetDayOfWeek(StartDate.DayOfWeek.ToString());
+            if (!Management.GetSelectDay(RoomID).Contains(dayofweek.ToString()))
+                return false;
+
             Appointment app = new Appointment();
             if (!app.CheckForDuplicateAppointment(StartDate, EndDate, RoomID))
                 return false;

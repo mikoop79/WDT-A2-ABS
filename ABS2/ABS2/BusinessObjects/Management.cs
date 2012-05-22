@@ -60,5 +60,35 @@ namespace ABS2.BusinessObjects
             }
             return selectedDay;
         }
+
+        public static int GetDayOfWeek(String name)
+        {
+            int dayofweek = 0;
+            switch (name)
+            {
+                case "Monday":
+                    dayofweek = 1;
+                    break;
+                case "Tuesday":
+                    dayofweek = 2;
+                    break;
+                case "Wednesday":
+                    dayofweek = 3;
+                    break;
+                case "Thursday":
+                    dayofweek = 4;
+                    break;
+                case "Friday":
+                    dayofweek = 5;
+                    break;
+                case "Saturday":
+                    dayofweek = 6;
+                    break;
+                case "Sunday":
+                    dayofweek = 7;
+                    break;
+            }
+            return dayofweek;
+        }
     }
 }

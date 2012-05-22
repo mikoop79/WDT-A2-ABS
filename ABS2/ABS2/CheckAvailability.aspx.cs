@@ -105,6 +105,12 @@ namespace ABS2
                 int b7PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[16]);
                 int b8PMSlotVal = Convert.ToInt32(grdAvailability.DataKeys[e.Row.RowIndex].Values[17]);
 
+                String[] times = calTxtBox.Text.Replace('-', '/').Split('/');
+                DateTime selectDate = Convert.ToDateTime(times[2] + "/" + times[1] + "/" + times[0]);
+                int dayofweek = Management.GetDayOfWeek(selectDate.DayOfWeek.ToString());
+                if (!Management.GetSelectDay(Convert.ToInt32(BookingID)).Contains(dayofweek.ToString()))
+                    e.Row.Visible = false;
+
                 //int len = StartDt.IndexOf(" ");
                 StartDt = calTxtBox.Text.Replace('/', '-');
                 LinkButton grdLnkBtn7 = e.Row.FindControl("grdLnkBtn7") as LinkButton;
